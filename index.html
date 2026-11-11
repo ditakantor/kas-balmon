@@ -9,10 +9,10 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
   import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
   
-  // Ganti dengan konfigurasi Firebase Realtime Database Anda
   const firebaseConfig = {
     apiKey: "AIzaSyCC3gVB5VcZcYDxET9GkSJoOJOoHr9_PHY",
     authDomain: "kas-balmon.firebaseapp.com",
+    databaseURL: "https://kas-balmon-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "kas-balmon",
     storageBucket: "kas-balmon.firebasestorage.app",
     messagingSenderId: "1093023099996",
@@ -20,7 +20,6 @@
     measurementId: "G-GPC31RTJMH"
   };
 
-  // Inisialisasi Firebase & Ekspor ke Global Window
   const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
   window.db = db;
@@ -34,13 +33,14 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,'Segoe UI',Arial,sans-serif;color:var(--ink);overflow-x:hidden}button,input,select,textarea{font:inherit;touch-action:manipulation}button{cursor:pointer}.app{display:flex;min-height:100vh}.sidebar{background:linear-gradient(180deg,var(--nav),var(--nav2));color:#fff;width:254px;flex-shrink:0;position:sticky;top:0;height:100vh;padding:27px 17px;display:flex;flex-direction:column;gap:26px}.brand{display:flex;gap:11px;align-items:center;padding:5px 12px}.brand-logo{display:grid;place-items:center;width:42px;height:42px;background:#397efa;border-radius:12px;font-weight:900;font-size:22px}.brand strong{font-size:20px;letter-spacing:-.5px}.brand small{display:block;opacity:.54;margin-top:3px;font-size:11px}.nav-caption{font-size:10px;letter-spacing:2.1px;color:#8c9eb9;margin:14px 15px}.nav{display:grid;gap:5px}.nav button{color:#b3c5dc;background:transparent;border:0;border-radius:11px;text-align:left;padding:13px 14px;display:flex;align-items:center;gap:12px;font-weight:600;font-size:13px;width:100%;transition:background .18s ease,transform .18s ease}.nav button:hover,.nav button.active{background:#ffffff19;color:white}.nav button.active{box-shadow:inset 3px 0 #66a6ff}.nav .symbol{font-size:19px;width:20px;text-align:center}.sidebar-foot{margin-top:auto;border-top:1px solid #ffffff20;padding:17px 9px;color:#a6b9cf;font-size:11px;line-height:1.8}.main{flex:1;min-width:0;padding:28px clamp(18px,3.2vw,52px) 48px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:26px}.topbar h1{font-size:28px;letter-spacing:-1px;margin:0}.subtitle{color:var(--muted);font-size:13px;margin:8px 0 0}.head-actions{display:flex;gap:9px;align-items:center}.btn{border:1px solid var(--border);padding:11px 16px;border-radius:10px;color:var(--ink);background:#fff;font-weight:700;font-size:12px;display:inline-flex;gap:9px;align-items:center;justify-content:center;white-space:nowrap;min-height:42px;transition:transform .16s ease,box-shadow .16s ease,background .16s ease}.btn:hover{filter:brightness(.97)}.btn:active{transform:scale(.975)}.btn.primary{background:var(--primary);border-color:var(--primary);color:white;box-shadow:0 6px 17px #2365e82b}.btn.danger{color:#ca4555}.btn.subtle{background:var(--light);color:var(--primary);border:0}.btn.tiny{padding:6px 10px;font-size:11px}.page{display:none}.page.active{display:block}.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:15px;margin-bottom:20px}.stat{background:var(--paper);border-radius:17px;padding:21px 19px;box-shadow:var(--shadow);border:1px solid var(--border);min-width:0;transition:transform .2s ease,box-shadow .2s ease}.stat:hover{transform:translateY(-3px);box-shadow:0 16px 36px #192c4c16}.stat .meta{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px;font-weight:600;gap:8px}.stat .emblem{width:35px;height:35px;display:grid;place-items:center;border-radius:10px;font-size:17px;background:#ebf2ff;color:var(--primary)}.stat:nth-child(2) .emblem{background:#e9f5ff;color:#2d86c9}.stat:nth-child(3) .emblem{background:#e1faf4;color:var(--teal)}.stat:nth-child(4) .emblem{background:#fff0ef;color:#e45d61}.stat:nth-child(5) .emblem{background:#fff6e8;color:#dca13a}.stat .value{font-size:clamp(16px,1.55vw,24px);font-weight:800;letter-spacing:-.7px;margin:15px 0 8px;overflow-wrap:anywhere}.stat .hint{font-size:11px;color:var(--muted)}.section-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(270px,1fr);gap:19px;margin-bottom:19px}.panel{background:#fff;border:1px solid var(--border);border-radius:17px;padding:21px;box-shadow:var(--shadow);min-width:0}.panel-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}.panel h3{margin:0;font-size:15px;letter-spacing:-.3px}.panel .note{font-size:12px;color:var(--muted)}.legend{display:flex;gap:15px;font-size:11px;color:var(--muted);flex-wrap:wrap}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}.chart{width:100%;height:240px;display:block;max-width:100%}.donut-wrap{display:flex;gap:22px;align-items:center;justify-content:center;min-height:225px;flex-wrap:wrap}.donut{width:170px;height:170px;border-radius:50%;background:conic-gradient(var(--primary) 0 50%,#12b69c 50% 100%);position:relative;flex-shrink:0}.donut:before{content:"";position:absolute;inset:31px;background:white;border-radius:50%}.donut-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:12px;color:var(--muted)}.donut-label b{font-size:21px;color:var(--ink);margin-bottom:5px}.split-list{font-size:12px;min-width:125px}.split-list>div{display:flex;justify-content:space-between;gap:18px;margin:12px 0}.split-list b{font-weight:700}.table-wrap{width:100%;overflow:auto}table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}th{font-size:11px;color:#8d9aab;font-weight:700;background:#f8faff}th,td{padding:14px 13px;border-bottom:1px solid #edf1f6;white-space:nowrap}td{font-weight:600}tr:last-child td{border-bottom:0}.pill{display:inline-block;padding:5px 9px;border-radius:100px;font-size:10px;font-weight:700}.pill.income{background:#def8ef;color:#138f70}.pill.expense{background:#ffebed;color:#d35762}.pill.loan{background:#fff4dd;color:#ad7a24}.pill.transfer{background:#e8f0ff;color:#426dc2}.green{color:var(--teal)}.red{color:#e45d61}.row-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.filter-line{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:17px}.field{display:flex;flex-direction:column;gap:7px;min-width:0}.field label{font-size:12px;font-weight:700;color:#55667c}.field input,.field select,.field textarea{width:100%;padding:11px 12px;border:1px solid #dfe6f0;border-radius:10px;background:#fff;color:var(--ink);outline:0;min-width:0}.field input:focus,.field select:focus,.field textarea:focus{border-color:#6294f2;box-shadow:0 0 0 3px #2365e815}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.field.wide{grid-column:1/-1}.filter-line .field{min-width:165px}.cash-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,1fr);gap:18px}.denoms{display:grid;gap:9px}.denom-row{display:grid;grid-template-columns:1fr 125px 1fr;align-items:center;gap:12px;background:#f8faff;border:1px solid #edf2f8;padding:9px 14px;border-radius:10px}.denom-row input{width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;text-align:center;font-size:16px;font-weight:700}.denom-row .subtotal{text-align:right;font-weight:700;font-size:12px}.cash-total{background:linear-gradient(140deg,#163e82,#2365e8);padding:24px;border-radius:16px;color:white;margin-bottom:16px}.cash-total small{opacity:.7}.cash-total strong{display:block;font-size:27px;margin:12px 0}.cash-total .variance{font-size:12px;margin-top:10px}.help{font-size:12px;color:var(--muted);line-height:1.8}.tip{padding:12px 15px;background:#eef5ff;border-radius:10px;color:#4c6b9c;font-size:12px;line-height:1.7}.loans-summary{display:flex;gap:15px;flex-wrap:wrap;margin-bottom:18px}.loans-summary .panel{flex:1;min-width:190px}.loans-summary strong{display:block;font-size:23px;margin:10px 0}.empty{text-align:center;padding:35px 15px;color:var(--muted);font-weight:400}.modal-backdrop{position:fixed;inset:0;background:#11213e99;display:none;z-index:50;align-items:center;justify-content:center;padding:16px}.modal-backdrop.show{display:flex}.modal{background:white;border-radius:17px;padding:25px;width:min(100%,540px);max-height:90vh;overflow:auto;box-shadow:0 25px 90px #101f3c55}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.modal-head h2{font-size:19px;margin:0}.close{background:none;border:0;font-size:24px;color:#8390a2}.modal-foot{display:flex;gap:10px;justify-content:flex-end;margin-top:24px}.toast{position:fixed;bottom:25px;right:25px;padding:14px 18px;border-radius:11px;background:#17315d;color:#fff;box-shadow:0 13px 40px #0003;display:none;z-index:60;font-size:13px}.toast.show{display:block}.mini-text{font-size:11px;color:var(--muted)}.settings-section{margin-bottom:18px}.mobile-menu{display:none}.settings-action{display:flex;gap:10px;flex-wrap:wrap}.warn{background:#fff5ec;color:#966525;padding:12px;border-radius:10px;font-size:12px;line-height:1.7;margin-top:15px}.footer{text-align:center;color:#98a5b6;font-size:11px;margin-top:35px}
 .loan-description{min-width:215px;max-width:330px;white-space:normal;line-height:1.5;color:#465a74;font-size:12px;overflow-wrap:anywhere}.action-buttons{display:flex;gap:7px;flex-wrap:wrap;align-items:center;min-width:120px}.modal textarea{resize:vertical;min-height:75px}.ref-cell {white-space:nowrap;font-weight:750;color:#1d4ec0;font-size:12px}.required{color:#dc3545;font-weight:800}.loan-help{display:block;margin-top:6px;color:#71849e;font-size:12px;line-height:1.5}.loan-info-banner{padding:12px 14px;border:1px solid #b9d5ff;border-radius:12px;background:#eef5ff;color:#2052a1;font-size:12px;line-height:1.6}.field[hidden],#targetAccountField[hidden],#txBorrowerField[hidden],#txLoanReferenceField[hidden],#txTypeInformation[hidden]{display:none!important}
 .import-hero{background:linear-gradient(145deg,#fff,#f7faff)}.import-badge{border-radius:999px;padding:8px 13px;background:#e8f3ff;color:#2064b6;font-size:11px;font-weight:800;letter-spacing:.08em}.import-drop{border:2px dashed #aac4ed;border-radius:17px;background:#f4f8ff;min-height:210px;padding:26px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:9px;cursor:pointer;transition:.2s}.import-drop:hover,.import-drop.dragover{border-color:#2563eb;background:#e8f1ff;transform:translateY(-2px)}.drop-icon{width:52px;height:52px;border-radius:16px;background:#dceafe;display:grid;place-items:center;color:#1d5ccd;font-size:29px;font-weight:700}.import-drop strong{font-size:17px}.import-drop span{font-size:13px;color:var(--muted)}.import-info{padding:12px 2px;color:var(--muted);font-size:13px}.import-settings{margin:9px 0 15px}.import-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:10px 0 18px}.import-mini{border:1px solid #e4ebf6;background:#f8faff;border-radius:12px;padding:13px;min-width:0}.import-mini small{display:block;color:#77889c;font-size:12px}.import-mini strong{font-size:21px;display:block;margin-top:5px}.import-warnings{border:1px solid #f0d5a2;background:#fffaf0;color:#845b1a;padding:15px;border-radius:12px;font-size:13px;margin-bottom:16px;line-height:1.65}.import-table{min-width:710px}.import-status{display:inline-flex;border-radius:100px;padding:4px 8px;font-size:11px;font-weight:700;white-space:nowrap}.import-status.ok{background:#e3f7ef;color:#087b53}.import-status.skip{background:#f1f2f6;color:#626e80}.import-status.warn{background:#fff0d6;color:#975b07}.import-actions{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-top:20px}
-@media(max-width:950px){.sidebar{position:fixed;z-index:30;transform:translateX(-100%);transition:transform .2s}.sidebar.open{transform:translateX(0)}.mobile-menu{display:inline-flex}.main{padding:20px}.section-grid,.cash-layout{grid-template-columns:1fr}}
+.nav-overlay{display:none}
+@media(max-width:950px){.nav-overlay{display:block;position:fixed;inset:0;background:#07142c99;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:29}.nav-overlay.visible{opacity:1;visibility:visible}.sidebar{position:fixed;z-index:30;transform:translateX(-100%);transition:transform .2s;box-shadow:15px 0 40px #00152e24;overflow-y:auto}.sidebar.open{transform:translateX(0)}.mobile-menu{display:inline-flex}.main{padding:20px;width:100%}.section-grid,.cash-layout{grid-template-columns:1fr}}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </head>
 <body>
 <div class="app">
-<aside class="sidebar" id="sidebar"><div class="brand"><div class="brand-logo">▥</div><div><strong>KasKantor</strong><small>FINANCIAL MANAGEMENT</small></div></div><div><div class="nav-caption">MENU UTAMA</div><nav class="nav" id="nav"><button class="active" data-page="dashboard"><span class="symbol">▦</span> Dashboard</button><button data-page="transactions"><span class="symbol">⇄</span> Transaksi Keuangan</button><button data-page="loans"><span class="symbol">♙</span> Pinjaman</button><button data-page="cash"><span class="symbol">▤</span> Rincian Saldo Cash</button><button data-page="reports"><span class="symbol">▥</span> Laporan & Rekap</button><button data-page="import"><span class="symbol">⇧</span> Impor Data Excel</button></nav><div class="nav-caption">LAINNYA</div><nav class="nav"><button data-page="settings"><span class="symbol">⚙</span> Pengaturan & Backup</button></nav></div><div class="sidebar-foot">🏢 <span id="officeNameSide">Keuangan Balmon Palangka Raya</span><br>Status: <span id="syncStatus">Offline-First</span></div></aside>
+<aside class="sidebar" id="sidebar"><div class="brand"><div class="brand-logo">▥</div><div><strong>KasKantor</strong><small>FINANCIAL MANAGEMENT</small></div></div><div><div class="nav-caption">MENU UTAMA</div><nav class="nav" id="nav"><button class="active" data-page="dashboard"><span class="symbol">▦</span> Dashboard</button><button data-page="transactions"><span class="symbol">⇄</span> Transaksi Keuangan</button><button data-page="loans"><span class="symbol">♙</span> Pinjaman</button><button data-page="cash"><span class="symbol">▤</span> Rincian Saldo Cash</button><button data-page="reports"><span class="symbol">▥</span> Laporan & Rekap</button><button data-page="import"><span class="symbol">⇧</span> Impor Data Excel</button></nav><div class="nav-caption">LAINNYA</div><nav class="nav"><button data-page="settings"><span class="symbol">⚙</span> Pengaturan & Backup</button></nav></div><div class="sidebar-foot">🏢 <span id="officeNameSide">Keuangan Balmon Palangka Raya</span><br>Status: <span id="syncStatus">Menghubungkan...</span></div></aside>
 <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div><main class="main"><div class="topbar"><div class="row-actions"><button class="btn mobile-menu" id="menuToggle" aria-label="Buka menu navigasi" aria-expanded="false">☰</button><div><h1 id="pageTitle">Dashboard Keuangan</h1><p class="subtitle" id="pageSubtitle">Ringkasan arus kas dan posisi keuangan kantor</p></div></div><div class="head-actions"><button class="btn" id="backupQuick">↧ Backup</button><button class="btn primary" id="addQuick">＋ Tambah Transaksi</button></div></div>
 <section class="page active" id="page-dashboard"><div class="stats"><div class="stat"><div class="meta"><span>Total Saldo</span><span class="emblem">◈</span></div><div class="value" id="statTotal">Rp0</div><div class="hint">Bank + uang tunai</div></div><div class="stat"><div class="meta"><span>Saldo Bank</span><span class="emblem">▤</span></div><div class="value" id="statBank">Rp0</div><div class="hint">Posisi saldo rekening</div></div><div class="stat"><div class="meta"><span>Saldo Cash</span><span class="emblem">▣</span></div><div class="value" id="statCash">Rp0</div><div class="hint">Hasil rincian pecahan uang tersimpan</div></div><div class="stat"><div class="meta"><span>Total Pengeluaran</span><span class="emblem">↗</span></div><div class="value" id="statExpense">Rp0</div><div class="hint">Akumulasi pengeluaran tercatat</div></div><div class="stat"><div class="meta"><span>Total Pinjaman</span><span class="emblem">☷</span></div><div class="value" id="statLoans">Rp0</div><div class="hint">Pinjaman belum dikembalikan</div></div></div>
 <div class="section-grid"><div class="panel"><div class="panel-title"><div><h3>Arus Kas Bulanan</h3><p class="note">Pemasukan dan pengeluaran 6 bulan terakhir</p></div><div class="legend"><span><i class="dot" style="background:#2365e8"></i>Pemasukan</span><span><i class="dot" style="background:#08a88a"></i>Pengeluaran</span></div></div><svg class="chart" id="cashChart" viewBox="0 0 720 240" role="img" aria-label="Grafik arus kas bulanan"></svg></div><div class="panel"><div class="panel-title"><div><h3>Komposisi Saldo</h3><p class="note">Perbandingan bank dan cash</p></div></div><div class="donut-wrap"><div class="donut" id="balanceDonut"><div class="donut-label"><b id="donutPct">0%</b> Bank</div></div><div class="split-list"><div><span><i class="dot" style="background:#2365e8"></i>Bank</span><b id="splitBank">Rp0</b></div><div><span><i class="dot" style="background:#12b69c"></i>Cash</span><b id="splitCash">Rp0</b></div></div></div></div></div>
@@ -48,7 +48,7 @@
 <section class="page" id="page-transactions"><div class="panel"><div class="panel-title"><div><h3>Daftar Transaksi</h3><p class="note">Edit langsung setiap transaksi termasuk hasil impor Excel</p></div><div class="row-actions"><button class="btn" data-goto="import">⇧ Impor Excel</button><button class="btn primary" id="addTransaction">＋ Catat Transaksi</button></div></div><div class="filter-line"><div class="row-actions"><div class="field"><label>Jenis Transaksi</label><select id="filterType"><option value="all">Semua jenis</option><option value="income">Pemasukan</option><option value="expense">Pengeluaran</option><option value="transfer">Transfer</option><option value="loan_out">Pinjaman diberikan</option><option value="loan_in">Pengembalian pinjaman</option></select></div><div class="field"><label>Periode</label><input type="month" id="filterMonth"></div></div><div class="row-actions"><button class="btn" id="resetFilter">Reset Filter</button><button class="btn" id="exportCsv">↧ Ekspor CSV</button></div></div><div class="table-wrap"><table><thead><tr><th>ID Transaksi</th><th>Tanggal</th><th>Keterangan</th><th>Jenis</th><th>Akun</th><th>Nominal</th><th>Aksi</th></tr></thead><tbody id="allTransactions"></tbody></table></div></div></section>
 <section class="page" id="page-loans"><div class="loans-summary"><div class="panel"><span class="note">Total Pinjaman Diberikan</span><strong id="loansIssued">Rp0</strong><span class="mini-text">Seluruh riwayat pencairan pinjaman</span></div><div class="panel"><span class="note">Total Pengembalian</span><strong id="loansReturned">Rp0</strong><span class="mini-text">Seluruh riwayat angsuran/pelunasan</span></div><div class="panel"><span class="note">Sisa Piutang Pinjaman</span><strong id="loansRemaining">Rp0</strong><span class="mini-text">Belum dikembalikan</span></div></div><div class="panel"><div class="panel-title"><div><h3>Daftar Pinjaman</h3><p class="note">Kelola pinjaman menggunakan ID transaksi: tambah, edit, catat pengembalian, atau hapus</p></div><button class="btn primary" id="newLoan">＋ Pinjaman Baru</button></div><div class="table-wrap"><table><thead><tr><th>ID Transaksi</th><th>Nama Peminjam</th><th>Uraian</th><th>Tanggal</th><th>Jumlah Pinjaman</th><th>Sudah Kembali</th><th>Sisa</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="loansTable"></tbody></table></div></div></section>
 <section class="page" id="page-cash"><div class="cash-layout"><div class="panel"><div class="panel-title"><div><h3>Rincian Pecahan Uang Tunai</h3><p class="note">Masukkan jumlah lembar/keping uang yang tersedia</p></div></div><div class="denoms" id="denoms"></div><p class="mini-text" style="margin-top:12px">Pecahan Rp1.000 kertas dan Rp1.000 koin dicatat terpisah. Keduanya bernilai Rp1.000 per lembar/keping.</p><div class="row-actions" style="margin-top:20px"><button class="btn primary" id="saveCashCount">✓ Simpan Hasil Hitung</button><button class="btn" id="resetCashCount">Reset Isian</button></div></div><div><div class="cash-total"><small>Total Uang Fisik</small><strong id="physicalTotal">Rp0</strong><small>Hasil hitung seluruh pecahan</small><div class="variance" id="varianceText">Selisih terhadap saldo cash: Rp0</div></div><div class="panel"><h3 style="margin-bottom:15px">Rekonsiliasi Cash</h3><p class="help">Saldo cash menurut transaksi: <b id="ledgerCash">Rp0</b></p><p class="help">Waktu terakhir disimpan: <b id="countTime">Belum pernah</b></p><div class="tip">Rincian pecahan uang digunakan untuk <b>menghitung dan mencocokkan</b> uang fisik. Setelah klik <b>Simpan Hasil Hitung</b>, total rincian pecahan uang otomatis menjadi <b>Saldo Cash pada Dashboard</b> dan ikut dihitung dalam <b>Total Saldo</b>.</div></div></div></div></section>
-<section class="page" id="page-reports"><div class="panel"><div class="panel-title"><div><h3>Laporan & Rekap Keuangan</h3><p class="note">Pilih rentang tanggal untuk melihat laporan</p></div><button class="btn" id="printReport">Printf Cetak Laporan</button></div><div class="row-actions" style="margin-bottom:22px"><div class="field"><label>Dari tanggal</label><input id="reportFrom" type="date"></div><div class="field"><label>Sampai tanggal</label><input id="reportTo" type="date"></div><button class="btn primary" id="applyReport" style="align-self:end">Tampilkan</button></div><div class="loans-summary"><div class="panel" style="background:#f7faff"><span class="note">Pemasukan Periode</span><strong id="reportIncome">Rp0</strong></div><div class="panel" style="background:#f7faff"><span class="note">Pengeluaran Periode</span><strong id="reportExpense">Rp0</strong></div><div class="panel" style="background:#f7faff"><span class="note">Selisih Operasional</span><strong id="reportNet">Rp0</strong></div></div><div class="table-wrap"><table><thead><tr><th>Tanggal</th><th>Keterangan</th><th>Jenis</th><th>Akun</th><th>Nominal</th></tr></thead><tbody id="reportTable"></tbody></table></div></div></section>
+<section class="page" id="page-reports"><div class="panel"><div class="panel-title"><div><h3>Laporan & Rekap Keuangan</h3><p class="note">Pilih rentang tanggal untuk melihat laporan</p></div><button class="btn" id="printReport">⎙ Cetak Laporan</button></div><div class="row-actions" style="margin-bottom:22px"><div class="field"><label>Dari tanggal</label><input id="reportFrom" type="date"></div><div class="field"><label>Sampai tanggal</label><input id="reportTo" type="date"></div><button class="btn primary" id="applyReport" style="align-self:end">Tampilkan</button></div><div class="loans-summary"><div class="panel" style="background:#f7faff"><span class="note">Pemasukan Periode</span><strong id="reportIncome">Rp0</strong></div><div class="panel" style="background:#f7faff"><span class="note">Pengeluaran Periode</span><strong id="reportExpense">Rp0</strong></div><div class="panel" style="background:#f7faff"><span class="note">Selisih Operasional</span><strong id="reportNet">Rp0</strong></div></div><div class="table-wrap"><table><thead><tr><th>Tanggal</th><th>Keterangan</th><th>Jenis</th><th>Akun</th><th>Nominal</th></tr></thead><tbody id="reportTable"></tbody></table></div></div></section>
 <section class="page" id="page-import">
  <div class="panel import-hero"><div class="panel-title"><div><h3>Impor Transaksi dari Excel</h3><p class="note">Masukkan file Excel kantor dan tinjau transaksi sebelum memperbarui dashboard.</p></div><span class="import-badge">XLSX · LOCAL</span></div>
   <div class="import-drop" id="importDrop" tabindex="0" role="button" aria-label="Pilih file Excel">
@@ -91,6 +91,7 @@
     const fresh = () => ({ version: 1, office: 'Keuangan Balmon Palangka Raya', opening: { bank: 0, cash: 0 }, transactions: [], loans: [], importedOpenings: [], cashCount: { counts: {}, savedAt: null } });
     
     let state = load();
+    let editingTransactionId = null, editingLoanId = null, editingRepaymentId = null, excelDraft = null;
 
     function load() { 
         try {
@@ -110,26 +111,57 @@
             transactions: s.transactions, 
             loans: s.loans, 
             importedOpenings: Array.isArray(s.importedOpenings) ? s.importedOpenings : [], 
-            cashCount: s.cashCount || { counts: {}, savedAt: null } 
+            cashCount: s.cashCount && typeof s.cashCount === 'object' && s.cashCount.counts ? s.cashCount : { counts: {}, savedAt: null } 
         }; 
     }
 
+    function nextTxCode(date, transactions = state.transactions) {
+        const prefix = 'TRX-' + String(date || today()).replace(/-/g, '') + '-';
+        const used = new Set(transactions.map(t => t.code).filter(Boolean));
+        let index = 1;
+        while (used.has(prefix + String(index).padStart(4, '0'))) index++;
+        return prefix + String(index).padStart(4, '0');
+    }
+
+    function loanOut(loanId, transactions = state.transactions) {
+        return transactions.find(t => t.type === 'loan_out' && t.loanId === loanId);
+    }
+
+    function loanRef(loan, transactions = state.transactions) {
+        return loanOut(loan.id, transactions)?.code || loan.id;
+    }
+
+    function ensureReferences(data) {
+        const entries = [...data.transactions].sort((a, b) => a.date.localeCompare(b.date) || a.id.localeCompare(b.id));
+        const codes = new Set();
+        for (const t of entries) {
+            if (typeof t.code === 'string' && /^TRX-\d{8}-\d{4,}$/.test(t.code) && !codes.has(t.code)) codes.add(t.code);
+            else t.code = null;
+        }
+        for (const t of entries) {
+            if (t.code) continue;
+            const code = nextTxCode(t.date, entries.filter(x => x.code));
+            t.code = code;
+            codes.add(code);
+        }
+    }
+
     function save() { 
+        ensureReferences(state);
         localStorage.setItem(KEY, JSON.stringify(state)); 
         render(); 
         
-        // Sinkronisasi otomatis ke Firebase Realtime Database
         if (window.db && window.dbRef && window.dbSet) {
             window.dbSet(window.dbRef(window.db, 'kaskantor'), state)
-              .then(() => el('syncStatus').textContent = 'Tersinkron (Firebase)')
+              .then(() => { if (el('syncStatus')) el('syncStatus').textContent = 'Tersinkron (Firebase)'; })
               .catch(err => {
                   console.error("Firebase Sync Error:", err);
-                  el('syncStatus').textContent = 'Lokal (Sync Error)';
+                  if (el('syncStatus')) el('syncStatus').textContent = 'Lokal (Sync Error)';
               });
         }
     }
 
-    // Listener Real-time Firebase Database
+    // Real-time Database Listener
     window.addEventListener('load', () => {
         const checkFirebase = setInterval(() => {
             if (window.dbOnValue && window.dbRef && window.db) {
@@ -140,7 +172,9 @@
                         state = validate(data);
                         localStorage.setItem(KEY, JSON.stringify(state));
                         render();
-                        el('syncStatus').textContent = 'Tersinkron (Firebase)';
+                        if (el('syncStatus')) el('syncStatus').textContent = 'Tersinkron (Firebase)';
+                    } else {
+                        if (el('syncStatus')) el('syncStatus').textContent = 'Aktif (Data Kosong)';
                     }
                 });
             }
@@ -150,9 +184,9 @@
     const sorted = () => [...state.transactions].sort((a, b) => b.date.localeCompare(a.date) || String(b.id).localeCompare(String(a.id)));
     const totalType = type => state.transactions.filter(t => t.type === type).reduce((a, t) => a + t.amount, 0);
     
-    function balances() { 
+    function balances(txs = state.transactions) { 
         let bank = state.opening.bank, cash = state.opening.cash; 
-        for (const t of state.transactions) {
+        for (const t of txs) {
             if (t.type === 'transfer') {
                 if (t.account === 'bank') bank -= t.amount; else cash -= t.amount;
                 if (t.target === 'bank') bank += t.amount; else cash += t.amount;
@@ -195,18 +229,25 @@
             const act = cell('');
             const buttons = document.createElement('div');
             buttons.className = 'action-buttons';
+            const edit = document.createElement('button');
+            edit.className = 'btn tiny subtle';
+            edit.textContent = '✎ Edit';
+            edit.type = 'button';
+            edit.onclick = () => beginEditTransaction(t.id);
+            buttons.append(edit);
+
             if (!['loan_out', 'loan_in'].includes(t.type)) {
                 const btn = document.createElement('button');
                 btn.className = 'btn tiny danger';
                 btn.textContent = 'Hapus';
                 btn.type = 'button';
-                btn.addEventListener('click', () => {
+                btn.onclick = () => {
                     if (confirm('Hapus transaksi ini?')) {
                         state.transactions = state.transactions.filter(x => x.id !== t.id);
                         save();
                         toast('Transaksi berhasil dihapus');
                     }
-                });
+                };
                 buttons.append(btn);
             }
             act.append(buttons);
@@ -229,60 +270,300 @@
         data.forEach(t => body.append(txRow(t, actions))); 
     }
 
-    function renderDashboard() { 
-        const b = balances(), cash = state.cashCount.savedAt ? denoms.reduce((sum, v) => sum + Number(state.cashCount.counts[v] || 0) * denomValue(v), 0) : b.cash, total = b.bank + cash; 
-        [['statTotal', total], ['statBank', b.bank], ['statCash', cash], ['statExpense', totalType('expense')], ['statLoans', loanOutstanding()], ['splitBank', b.bank], ['splitCash', cash]].forEach(([id, n]) => el(id).textContent = fmt(n)); 
-        const pct = total > 0 ? Math.min(100, Math.max(0, b.bank / total * 100)) : 0; 
-        el('balanceDonut').style.background = `conic-gradient(#2365e8 0% ${pct}%, #12b69c ${pct}% 100%)`; 
-        el('donutPct').textContent = Math.round(pct) + '%'; 
-        showRows('recentTable', sorted().slice(0, 6)); 
+    function renderChart() {
+        const svg = el('cashChart'); if (!svg) return;
+        svg.replaceChildren();
+        const ns = 'http://www.w3.org/2000/svg';
+        function node(name, attrs = {}) { const n = document.createElementNS(ns, name); for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v); svg.append(n); return n; }
+        const now = new Date(), arr = [];
+        for (let i = 5; i >= 0; i--) {
+            const dt = new Date(now.getFullYear(), now.getMonth() - i, 1), key = dt.getFullYear() + '-' + String(dt.getMonth() + 1).padStart(2, '0');
+            const rec = { label: dt.toLocaleString('id-ID', { month: 'short' }), inc: 0, exp: 0 };
+            state.transactions.forEach(t => { if (t.date.startsWith(key)) { if (t.type === 'income') rec.inc += t.amount; if (t.type === 'expense') rec.exp += t.amount; } });
+            arr.push(rec);
+        }
+        const max = Math.max(1, ...arr.flatMap(x => [x.inc, x.exp]));
+        for (let i = 0; i <= 4; i++) {
+            const y = 20 + i * 45;
+            node('line', { x1: 35, y1: y, x2: 710, y2: y, stroke: '#e8edf5', 'stroke-width': 1 });
+        }
+        arr.forEach((d, i) => {
+            const x = 58 + i * 110;
+            const h1 = (d.inc / max) * 180, h2 = (d.exp / max) * 180;
+            node('rect', { x, y: 200 - h1, width: 31, height: h1, rx: 5, fill: '#2365e8' });
+            node('rect', { x: x + 35, y: 200 - h2, width: 31, height: h2, rx: 5, fill: '#08a88a' });
+        });
     }
 
-    function renderTransactions() { showRows('allTransactions', sorted(), true); }
+    function renderDashboard() { 
+        const b = balances(), cash = state.cashCount.savedAt ? denoms.reduce((sum, v) => sum + Number(state.cashCount.counts[v] || 0) * denomValue(v), 0) : b.cash, total = b.bank + cash; 
+        [['statTotal', total], ['statBank', b.bank], ['statCash', cash], ['statExpense', totalType('expense')], ['statLoans', loanOutstanding()], ['splitBank', b.bank], ['splitCash', cash]].forEach(([id, n]) => { if (el(id)) el(id).textContent = fmt(n); }); 
+        const pct = total > 0 ? Math.min(100, Math.max(0, b.bank / total * 100)) : 0; 
+        if (el('balanceDonut')) el('balanceDonut').style.background = `conic-gradient(#2365e8 0% ${pct}%, #12b69c ${pct}% 100%)`; 
+        if (el('donutPct')) el('donutPct').textContent = Math.round(pct) + '%'; 
+        showRows('recentTable', sorted().slice(0, 6)); 
+        renderChart();
+    }
+
+    function renderTransactions() {
+        let data = sorted(), type = el('filterType').value, month = el('filterMonth').value;
+        if (type !== 'all') data = data.filter(t => t.type === type);
+        if (month) data = data.filter(t => t.date.startsWith(month));
+        showRows('allTransactions', data, true);
+    }
+
     function renderLoans() {
         const body = el('loansTable'); body.replaceChildren();
         el('loansIssued').textContent = fmt(totalType('loan_out'));
         el('loansReturned').textContent = fmt(totalType('loan_in'));
         el('loansRemaining').textContent = fmt(loanOutstanding());
         
+        if (!state.loans.length) {
+            const r = document.createElement('tr'), td = cell('Belum ada pinjaman');
+            td.colSpan = 9; td.className = 'empty'; r.append(td); body.append(r);
+            return;
+        }
+
         for (const l of state.loans) {
             const repaid = loanRepaid(l.id), left = l.amount - repaid, r = document.createElement('tr');
-            r.append(cell(l.id), cell(l.person), cell(l.description || ''), cell(l.date), cell(fmt(l.amount)), cell(fmt(repaid)), cell(fmt(left)));
+            r.append(cell(loanRef(l)), cell(l.person), cell(l.description || ''), cell(l.date), cell(fmt(l.amount)), cell(fmt(repaid)), cell(fmt(left)));
             const status = cell('');
             const p = document.createElement('span');
             p.className = 'pill ' + (left <= 0 ? 'income' : 'loan');
             p.textContent = left <= 0 ? 'Lunas' : 'Belum Lunas';
             status.append(p);
             r.append(status);
+
+            const act = cell('');
+            const buttons = document.createElement('div');
+            buttons.className = 'action-buttons';
+            if (left > 0) {
+                const bt = document.createElement('button');
+                bt.className = 'btn tiny primary';
+                bt.textContent = 'Bayar';
+                bt.onclick = () => openRepay(l.id);
+                buttons.append(bt);
+            }
+            const del = document.createElement('button');
+            del.className = 'btn tiny danger';
+            del.textContent = 'Hapus';
+            del.onclick = () => {
+                if (confirm('Hapus pinjaman ini beserta seluruh riwayat terkait?')) {
+                    state.loans = state.loans.filter(x => x.id !== l.id);
+                    state.transactions = state.transactions.filter(x => x.loanId !== l.id);
+                    save();
+                    toast('Pinjaman dihapus');
+                }
+            };
+            buttons.append(del);
+            act.append(buttons);
+            r.append(act);
             body.append(r);
         }
     }
 
-    function renderSettings() { el('officeName').value = state.office; el('openingBank').value = state.opening.bank; el('openingCash').value = state.opening.cash; el('officeNameSide').textContent = state.office; }
-    function render() { renderDashboard(); renderTransactions(); renderLoans(); renderSettings(); }
+    function renderCash() {
+        const b = balances(), count = denoms.reduce((sum, v) => sum + Number(el('denom_' + v)?.value || 0) * denomValue(v), 0), delta = count - b.cash;
+        if (el('physicalTotal')) el('physicalTotal').textContent = fmt(count);
+        if (el('ledgerCash')) el('ledgerCash').textContent = fmt(b.cash);
+        if (el('varianceText')) el('varianceText').textContent = 'Selisih terhadap saldo cash: ' + (delta > 0 ? '+' : '') + fmt(delta);
+        if (el('countTime')) el('countTime').textContent = state.cashCount.savedAt ? new Date(state.cashCount.savedAt).toLocaleString('id-ID') : 'Belum pernah';
+    }
 
-    document.querySelectorAll('[data-page]').forEach(x => x.onclick = () => {
-        const page = x.dataset.page;
-        document.querySelectorAll('.page').forEach(p => p.classList.toggle('active', p.id === 'page-' + page));
-        document.querySelectorAll('.nav button').forEach(b => b.classList.toggle('active', b.dataset.page === page));
-    });
+    function buildDenoms() {
+        const parent = el('denoms'); if (!parent) return;
+        parent.replaceChildren();
+        denoms.forEach(v => {
+            const r = document.createElement('div'); r.className = 'denom-row';
+            const a = document.createElement('b'); a.textContent = denomLabel(v);
+            const inp = document.createElement('input'); inp.id = 'denom_' + v; inp.type = 'number'; inp.min = '0';
+            inp.value = state.cashCount.counts[v] || 0;
+            const sub = document.createElement('span'); sub.className = 'subtotal'; sub.id = 'sub_' + v;
+            sub.textContent = fmt(Number(inp.value) * denomValue(v));
+            inp.addEventListener('input', () => {
+                sub.textContent = fmt(Math.max(0, Number(inp.value) || 0) * denomValue(v));
+                renderCash();
+            });
+            r.append(a, inp, sub); parent.append(r);
+        });
+    }
+
+    function renderReport() {
+        const from = el('reportFrom').value, to = el('reportTo').value;
+        const tx = sorted().filter(t => (!from || t.date >= from) && (!to || t.date <= to));
+        const inc = tx.filter(t => t.type === 'income').reduce((a, t) => a + t.amount, 0), exp = tx.filter(t => t.type === 'expense').reduce((a, t) => a + t.amount, 0);
+        el('reportIncome').textContent = fmt(inc); el('reportExpense').textContent = fmt(exp); el('reportNet').textContent = fmt(inc - exp);
+        showRows('reportTable', tx);
+    }
+
+    function renderSettings() { el('officeName').value = state.office; el('openingBank').value = state.opening.bank; el('openingCash').value = state.opening.cash; el('officeNameSide').textContent = state.office; }
+    function render() { renderDashboard(); renderTransactions(); renderLoans(); renderCash(); renderReport(); renderSettings(); }
+
+    // Navigasi & Modal System
+    const pageTitles = { 
+        dashboard: ['Dashboard Keuangan', 'Ringkasan arus kas dan posisi keuangan kantor'], 
+        transactions: ['Transaksi Keuangan', 'Catat dan kelola seluruh transaksi'], 
+        loans: ['Manajemen Pinjaman', 'Pantau piutang dan pengembalian dana'], 
+        cash: ['Rincian Saldo Cash', 'Hitung uang tunai berdasarkan pecahan'], 
+        reports: ['Laporan & Rekap', 'Ringkasan keuangan menurut periode'], 
+        settings: ['Pengaturan & Backup', 'Atur saldo awal dan kelola keamanan data'], 
+        import: ['Impor Data Excel', 'Unggah dan olah transaksi Excel ke dashboard'] 
+    };
+
+    function goto(page) { 
+        document.querySelectorAll('.page').forEach(x => x.classList.toggle('active', x.id === 'page-' + page)); 
+        document.querySelectorAll('.nav button').forEach(x => x.classList.toggle('active', x.dataset.page === page)); 
+        if (pageTitles[page]) {
+            el('pageTitle').textContent = pageTitles[page][0]; 
+            el('pageSubtitle').textContent = pageTitles[page][1]; 
+        }
+        closeNav(); 
+        window.scrollTo({ top: 0, behavior: 'smooth' }); 
+    }
+
+    function closeNav() { el('sidebar').classList.remove('open'); el('navOverlay').classList.remove('visible'); }
+    el('menuToggle').onclick = () => { const opened = el('sidebar').classList.toggle('open'); el('navOverlay').classList.toggle('visible', opened); };
+    el('navOverlay').onclick = closeNav;
+
+    const openModal = id => el(id).classList.add('show'), closeModal = id => el(id).classList.remove('show');
+    document.querySelectorAll('[data-close]').forEach(b => b.onclick = () => closeModal(b.dataset.close));
+    document.querySelectorAll('.modal-backdrop').forEach(m => m.addEventListener('click', e => { if (e.target === m) closeModal(m.id); }));
+
+    document.querySelectorAll('[data-page]').forEach(x => x.onclick = () => goto(x.dataset.page));
+    document.querySelectorAll('[data-goto]').forEach(x => x.onclick = () => goto(x.dataset.goto));
+
+    // Form Handlers
+    function updateTxType() {
+        const type = el('txType').value;
+        el('targetAccountField').hidden = type !== 'transfer';
+        el('txBorrowerField').hidden = type !== 'loan_out';
+        el('txLoanReferenceField').hidden = type !== 'loan_in';
+        el('txTypeInformation').hidden = !['loan_out', 'loan_in'].includes(type);
+    }
+
+    function addTransaction() {
+        editingTransactionId = null;
+        el('transactionForm').reset();
+        el('txDate').value = today();
+        el('txType').value = 'income';
+        updateTxType();
+        openModal('transactionModal');
+    }
+
+    function beginEditTransaction(id) {
+        const tx = state.transactions.find(t => t.id === id);
+        if (!tx) return toast('Transaksi tidak ditemukan');
+        editingTransactionId = tx.id;
+        el('transactionForm').reset();
+        el('txType').value = tx.type;
+        el('txDate').value = tx.date;
+        el('txDescription').value = tx.description;
+        el('txAmount').value = tx.amount;
+        el('txAccount').value = tx.account;
+        if (tx.type === 'transfer') el('txTarget').value = tx.target || 'cash';
+        updateTxType();
+        openModal('transactionModal');
+    }
+
+    el('addQuick').onclick = addTransaction;
+    el('addTransaction').onclick = addTransaction;
+    el('txType').onchange = updateTxType;
+
+    el('transactionForm').onsubmit = (e) => {
+        e.preventDefault();
+        const type = el('txType').value, account = el('txAccount').value, target = el('txTarget').value;
+        const amount = Number(el('txAmount').value), date = el('txDate').value, description = el('txDescription').value.trim();
+        
+        const original = editingTransactionId ? state.transactions.find(t => t.id === editingTransactionId) : null;
+        const updated = { ...(original || {}), id: original?.id || uid(), code: original?.code || nextTxCode(date), date, description, type, account, amount };
+        if (type === 'transfer') updated.target = target;
+
+        if (original) {
+            state.transactions = state.transactions.map(t => t.id === original.id ? updated : t);
+        } else {
+            state.transactions.push(updated);
+        }
+        save();
+        closeModal('transactionModal');
+        toast('Transaksi berhasil disimpan');
+    };
+
+    el('newLoan').onclick = () => {
+        el('loanForm').reset();
+        el('loanDate').value = today();
+        openModal('loanModal');
+    };
+
+    el('loanForm').onsubmit = (e) => {
+        e.preventDefault();
+        const person = el('loanPerson').value.trim(), date = el('loanDate').value, amount = Number(el('loanAmount').value);
+        const account = el('loanAccount').value, description = el('loanDescription').value.trim(), note = el('loanNote').value.trim();
+        
+        const id = uid();
+        state.loans.push({ id, person, date, amount, account, description, note });
+        state.transactions.push({ id: uid(), code: nextTxCode(date), loanId: id, date, description, type: 'loan_out', account, amount });
+        save();
+        closeModal('loanModal');
+        toast('Pinjaman berhasil disimpan');
+    };
+
+    function openRepay(id) {
+        const l = state.loans.find(x => x.id === id); if (!l) return;
+        el('repayForm').reset();
+        el('repayDate').value = today();
+        el('repayLoanId').replaceChildren();
+        const opt = document.createElement('option'); opt.value = l.id; opt.textContent = l.person + ' (' + fmt(l.amount - loanRepaid(l.id)) + ')';
+        el('repayLoanId').append(opt);
+        el('repayAmount').value = l.amount - loanRepaid(l.id);
+        el('repayText').value = 'Pengembalian pinjaman ' + l.person;
+        openModal('repayModal');
+    }
+
+    el('repayForm').onsubmit = (e) => {
+        e.preventDefault();
+        const loanId = el('repayLoanId').value, date = el('repayDate').value, amount = Number(el('repayAmount').value);
+        const account = el('repayAccount').value, description = el('repayText').value.trim();
+        const l = state.loans.find(x => x.id === loanId); if (!l) return;
+
+        state.transactions.push({ id: uid(), code: nextTxCode(date), loanId: l.id, date, description, type: 'loan_in', account, amount });
+        save();
+        closeModal('repayModal');
+        toast('Pengembalian berhasil dicatat');
+    };
+
+    // Quick Actions
+    el('saveCashCount').onclick = () => {
+        const counts = {};
+        denoms.forEach(v => { counts[v] = Number(el('denom_' + v)?.value || 0); });
+        state.cashCount = { counts, savedAt: new Date().toISOString() };
+        save();
+        toast('Hasil hitung pecahan disimpan');
+    };
 
     el('saveSettings').onclick = () => {
         state.office = el('officeName').value || 'Keuangan Balmon Palangka Raya';
         state.opening.bank = Number(el('openingBank').value) || 0;
         state.opening.cash = Number(el('openingCash').value) || 0;
         save();
-        toast('Pengaturan berhasil disimpan');
+        toast('Pengaturan disimpan');
     };
 
     el('deleteAll').onclick = () => {
-        if (confirm('Hapus seluruh data di sistem ini?')) {
+        if (confirm('PERINGATAN: Hapus seluruh data?') && prompt('Ketik HAPUS untuk konfirmasi') === 'HAPUS') {
             state = fresh();
             save();
             toast('Data berhasil dibersihkan');
         }
     };
 
+    el('filterType').onchange = renderTransactions;
+    el('filterMonth').onchange = renderTransactions;
+    el('resetFilter').onclick = () => { el('filterType').value = 'all'; el('filterMonth').value = ''; renderTransactions(); };
+
+    buildDenoms();
+    const n = today();
+    el('reportFrom').value = n.slice(0, 7) + '-01';
+    el('reportTo').value = n;
     render();
 })();
 </script>
