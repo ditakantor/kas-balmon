@@ -41,10 +41,11 @@
 
 <style>
 :root{--bg:#f3f6fc;--paper:#fff;--ink:#19283d;--muted:#7a8a9e;--nav:#101f3c;--nav2:#152c50;--primary:#2365e8;--light:#eaf1ff;--teal:#08a88a;--amber:#e9a23b;--red:#eb6270;--border:#e7edf5;--shadow:0 10px 35px #192c4c0c}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,'Segoe UI',Arial,sans-serif;color:var(--ink);overflow-x:hidden}button,input,select,textarea{font:inherit;touch-action:manipulation}button{cursor:pointer}.app{display:flex;min-height:100vh}.sidebar{background:linear-gradient(180deg,var(--nav),var(--nav2));color:#fff;width:254px;flex-shrink:0;position:sticky;top:0;height:100vh;padding:27px 17px;display:flex;flex-direction:column;gap:26px;z-index:40}.brand{display:flex;gap:11px;align-items:center;padding:5px 12px}.brand-logo{display:grid;place-items:center;width:42px;height:42px;background:#397efa;border-radius:12px;font-weight:900;font-size:22px}.brand strong{font-size:20px;letter-spacing:-.5px}.brand small{display:block;opacity:.54;margin-top:3px;font-size:11px}.nav-caption{font-size:10px;letter-spacing:2.1px;color:#8c9eb9;margin:14px 15px}.nav{display:grid;gap:5px}.nav button{color:#b3c5dc;background:transparent;border:0;border-radius:11px;text-align:left;padding:13px 14px;display:flex;align-items:center;gap:12px;font-weight:600;font-size:13px;width:100%;transition:background .18s ease,transform .18s ease}.nav button:hover,.nav button.active{background:#ffffff19;color:white}.nav button.active{box-shadow:inset 3px 0 #66a6ff}.nav .symbol{font-size:19px;width:20px;text-align:center}.sidebar-foot{margin-top:auto;border-top:1px solid #ffffff20;padding:17px 9px;color:#a6b9cf;font-size:11px;line-height:1.8}.main{flex:1;min-width:0;padding:28px clamp(18px,3.2vw,52px) 48px}.topbar{display:flex;justify-space-between;align-items:center;gap:14px;margin-bottom:26px}.topbar h1{font-size:28px;letter-spacing:-1px;margin:0}.subtitle{color:var(--muted);font-size:13px;margin:8px 0 0}.head-actions{display:flex;gap:9px;align-items:center}.btn{border:1px solid var(--border);padding:11px 16px;border-radius:10px;color:var(--ink);background:#fff;font-weight:700;font-size:12px;display:inline-flex;gap:9px;align-items:center;justify-content:center;white-space:nowrap;min-height:42px;transition:transform .16s ease,box-shadow .16s ease,background .16s ease}.btn:hover{filter:brightness(.97)}.btn:active{transform:scale(.975)}.btn.primary{background:var(--primary);border-color:var(--primary);color:white;box-shadow:0 6px 17px #2365e82b}.btn.danger{color:#ca4555}.btn.subtle{background:var(--light);color:var(--primary);border:0}.btn.tiny{padding:6px 10px;font-size:11px;min-height:32px}.page{display:none}.page.active{display:block}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,'Segoe UI',Arial,sans-serif;color:var(--ink);overflow-x:hidden}button,input,select,textarea{font:inherit;touch-action:manipulation}button{cursor:pointer}.app{display:flex;min-height:100vh}.sidebar{background:linear-gradient(180deg,var(--nav),var(--nav2));color:#fff;width:254px;flex-shrink:0;position:sticky;top:0;height:100vh;padding:27px 17px;display:flex;flex-direction:column;gap:26px;z-index:40}.brand{display:flex;gap:11px;align-items:center;padding:5px 12px}.brand-logo{display:grid;place-items:center;width:42px;height:42px;background:#397efa;border-radius:12px;font-weight:900;font-size:22px}.brand strong{font-size:20px;letter-spacing:-.5px}.brand small{display:block;opacity:.54;margin-top:3px;font-size:11px}.nav-caption{font-size:10px;letter-spacing:2.1px;color:#8c9eb9;margin:14px 15px}.nav{display:grid;gap:5px}.nav button{color:#b3c5dc;background:transparent;border:0;border-radius:11px;text-align:left;padding:13px 14px;display:flex;align-items:center;gap:12px;font-weight:600;font-size:13px;width:100%;transition:background .18s ease,transform .18s ease}.nav button:hover,.nav button.active{background:#ffffff19;color:white}.nav button.active{box-shadow:inset 3px 0 #66a6ff}.nav .symbol{font-size:19px;width:20px;text-align:center}.sidebar-foot{margin-top:auto;border-top:1px solid #ffffff20;padding:17px 9px;color:#a6b9cf;font-size:11px;line-height:1.8}.main{flex:1;min-width:0;padding:28px clamp(18px,3.2vw,52px) 48px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:26px}.topbar h1{font-size:28px;letter-spacing:-1px;margin:0}.subtitle{color:var(--muted);font-size:13px;margin:8px 0 0}.head-actions{display:flex;gap:9px;align-items:center}.btn{border:1px solid var(--border);padding:11px 16px;border-radius:10px;color:var(--ink);background:#fff;font-weight:700;font-size:12px;display:inline-flex;gap:9px;align-items:center;justify-content:center;white-space:nowrap;min-height:42px;transition:transform .16s ease,box-shadow .16s ease,background .16s ease}.btn:hover{filter:brightness(.97)}.btn:active{transform:scale(.975)}.btn.primary{background:var(--primary);border-color:var(--primary);color:white;box-shadow:0 6px 17px #2365e82b}.btn.danger{color:#ca4555}.btn.subtle{background:var(--light);color:var(--primary);border:0}.btn.tiny{padding:6px 10px;font-size:11px;min-height:32px}.page{display:none}.page.active{display:block}
 
 /* GRID DESKTOP DEFAULT */
 .stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:15px;margin-bottom:20px}.stat{background:var(--paper);border-radius:17px;padding:21px 19px;box-shadow:var(--shadow);border:1px solid var(--border);min-width:0;transition:transform .2s ease,box-shadow .2s ease}.stat:hover{transform:translateY(-3px);box-shadow:0 16px 36px #192c4c16}.stat .meta{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px;font-weight:600;gap:8px}.stat .emblem{width:35px;height:35px;display:grid;place-items:center;border-radius:10px;font-size:17px;background:#ebf2ff;color:var(--primary)}.stat:nth-child(2) .emblem{background:#e9f5ff;color:#2d86c9}.stat:nth-child(3) .emblem{background:#e1faf4;color:var(--teal)}.stat:nth-child(4) .emblem{background:#fff0ef;color:#e45d61}.stat:nth-child(5) .emblem{background:#fff6e8;color:#dca13a}.stat .value{font-size:clamp(16px,1.55vw,24px);font-weight:800;letter-spacing:-.7px;margin:15px 0 8px;overflow-wrap:anywhere}.stat .hint{font-size:11px;color:var(--muted)}.section-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(270px,1fr);gap:19px;margin-bottom:19px}.panel{background:#fff;border:1px solid var(--border);border-radius:17px;padding:21px;box-shadow:var(--shadow);min-width:0}.panel-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}.panel h3{margin:0;font-size:15px;letter-spacing:-.3px}.panel .note{font-size:12px;color:var(--muted)}.legend{display:flex;gap:15px;font-size:11px;color:var(--muted);flex-wrap:wrap}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}.chart{width:100%;height:240px;display:block;max-width:100%}.donut-wrap{display:flex;gap:22px;align-items:center;justify-content:center;min-height:225px;flex-wrap:wrap}.donut{width:170px;height:170px;border-radius:50%;background:conic-gradient(var(--primary) 0 50%,#12b69c 50% 100%);position:relative;flex-shrink:0}.donut:before{content:"";position:absolute;inset:31px;background:white;border-radius:50%}.donut-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:12px;color:var(--muted)}.donut-label b{font-size:21px;color:var(--ink);margin-bottom:5px}.split-list{font-size:12px;min-width:125px}.split-list>div{display:flex;justify-content:space-between;gap:18px;margin:12px 0}.split-list b{font-weight:700}.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}th{font-size:11px;color:#8d9aab;font-weight:700;background:#f8faff}th,td{padding:14px 13px;border-bottom:1px solid #edf1f6;white-space:nowrap}td{font-weight:600}tr:last-child td{border-bottom:0}.pill{display:inline-block;padding:5px 9px;border-radius:100px;font-size:10px;font-weight:700}.pill.income{background:#def8ef;color:#138f70}.pill.expense{background:#ffebed;color:#d35762}.pill.loan{background:#fff4dd;color:#ad7a24}.pill.transfer{background:#e8f0ff;color:#426dc2}.green{color:var(--teal)}.red{color:#e45d61}.row-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.filter-line{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:17px}.field{display:flex;flex-direction:column;gap:7px;min-width:0}.field label{font-size:12px;font-weight:700;color:#55667c}.field input,.field select,.field textarea{width:100%;padding:11px 12px;border:1px solid #dfe6f0;border-radius:10px;background:#fff;color:var(--ink);outline:0;min-width:0}.field input:focus,.field select:focus,.field textarea:focus{border-color:#6294f2;box-shadow:0 0 0 3px #2365e815}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.field.wide{grid-column:1/-1}.filter-line .field{min-width:165px}.cash-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,1fr);gap:18px}.denoms{display:grid;gap:9px}.denom-row{display:grid;grid-template-columns:1fr 125px 1fr;align-items:center;gap:12px;background:#f8faff;border:1px solid #edf2f8;padding:9px 14px;border-radius:10px}.denom-row input{width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;text-align:center;font-size:16px;font-weight:700}.denom-row .subtotal{text-align:right;font-weight:700;font-size:12px}.cash-total{background:linear-gradient(140deg,#163e82,#2365e8);padding:24px;border-radius:16px;color:white;margin-bottom:16px}.cash-total small{opacity:.7}.cash-total strong{display:block;font-size:27px;margin:12px 0}.cash-total .variance{font-size:12px;margin-top:10px}.help{font-size:12px;color:var(--muted);line-height:1.8}.tip{padding:12px 15px;background:#eef5ff;border-radius:10px;color:#4c6b9c;font-size:12px;line-height:1.7}.loans-summary{display:flex;gap:15px;flex-wrap:wrap;margin-bottom:18px}.loans-summary .panel{flex:1;min-width:190px}.loans-summary strong{display:block;font-size:23px;margin:10px 0}.empty{text-align:center;padding:35px 15px;color:var(--muted);font-weight:400}.modal-backdrop{position:fixed;inset:0;background:#11213e99;display:none;z-index:50;align-items:center;justify-content:center;padding:16px}.modal-backdrop.show{display:flex}.modal{background:white;border-radius:17px;padding:25px;width:min(100%,540px);max-height:90vh;overflow-y:auto;box-shadow:0 25px 90px #101f3c55}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.modal-head h2{font-size:19px;margin:0}.close{background:none;border:0;font-size:24px;color:#8390a2}.modal-foot{display:flex;gap:10px;justify-content:flex-end;margin-top:24px}.toast{position:fixed;bottom:25px;right:25px;padding:14px 18px;border-radius:11px;background:#17315d;color:#fff;box-shadow:0 13px 40px #0003;display:none;z-index:60;font-size:13px}.toast.show{display:block}.mini-text{font-size:11px;color:var(--muted)}.settings-section{margin-bottom:18px}.mobile-menu{display:none}.settings-action{display:flex;gap:10px;flex-wrap:wrap}.footer{text-align:center;color:#98a5b6;font-size:11px;margin-top:35px}.action-buttons{display:flex;gap:7px;flex-wrap:wrap;align-items:center;min-width:120px}.modal textarea{resize:vertical;min-height:75px}.ref-cell {white-space:nowrap;font-weight:750;color:#1d4ec0;font-size:12px}.required{color:#dc3545;font-weight:800}.field[hidden],#targetAccountField[hidden],#txPersonField[hidden],#txLoanReferenceField[hidden]{display:none!important}.nav-overlay{display:none}
+.input-group{display:flex;gap:8px;align-items:stretch}.input-group select{flex:1;min-width:0}.input-group .btn{padding:0 14px;flex-shrink:0}
 
 /* ==========================================================================
    📱 MEDIA QUERIES UNTUK RESPONSIVE DESKTOP, TABLET & HANDPHONE
@@ -110,20 +111,44 @@
 <section class="page active" id="page-dashboard"><div class="stats"><div class="stat"><div class="meta"><span>Total Saldo</span><span class="emblem">◈</span></div><div class="value" id="statTotal">Rp0</div><div class="hint">Bank + uang tunai</div></div><div class="stat"><div class="meta"><span>Saldo Bank</span><span class="emblem">▤</span></div><div class="value" id="statBank">Rp0</div><div class="hint">Posisi saldo rekening</div></div><div class="stat"><div class="meta"><span>Saldo Cash</span><span class="emblem">▣</span></div><div class="value" id="statCash">Rp0</div><div class="hint">Hasil rincian pecahan uang tersimpan</div></div><div class="stat"><div class="meta"><span>Total Pengeluaran</span><span class="emblem">↗</span></div><div class="value" id="statExpense">Rp0</div><div class="hint">Akumulasi pengeluaran tercatat</div></div><div class="stat"><div class="meta"><span>Total Pinjaman</span><span class="emblem">☷</span></div><div class="value" id="statLoans">Rp0</div><div class="hint">Pinjaman belum dikembalikan</div></div></div>
 <div class="section-grid"><div class="panel"><div class="panel-title"><div><h3>Arus Kas Bulanan</h3><p class="note">Pemasukan dan pengeluaran 6 bulan terakhir</p></div><div class="legend"><span><i class="dot" style="background:#2365e8"></i>Pemasukan</span><span><i class="dot" style="background:#08a88a"></i>Pengeluaran</span></div></div><svg class="chart" id="cashChart" viewBox="0 0 720 240" role="img" aria-label="Grafik arus kas bulanan"></svg></div><div class="panel"><div class="panel-title"><div><h3>Komposisi Saldo</h3><p class="note">Perbandingan bank dan cash</p></div></div><div class="donut-wrap"><div class="donut" id="balanceDonut"><div class="donut-label"><b id="donutPct">0%</b> Bank</div></div><div class="split-list"><div><span><i class="dot" style="background:#2365e8"></i>Bank</span><b id="splitBank">Rp0</b></div><div><span><i class="dot" style="background:#12b69c"></i>Cash</span><b id="splitCash">Rp0</b></div></div></div></div></div>
 <div class="panel"><div class="panel-title"><div><h3>Transaksi Terbaru</h3><p class="note">Aktivitas keuangan yang terakhir dicatat</p></div><button class="btn subtle tiny" data-goto="transactions">Lihat semua →</button></div><div class="table-wrap"><table><thead><tr><th>Tanggal</th><th>Nama / Pihak</th><th>Keterangan</th><th>Jenis</th><th>Akun</th><th>Nominal</th></tr></thead><tbody id="recentTable"></tbody></table></div></div></section>
-<section class="page" id="page-transactions"><div class="panel"><div class="panel-title"><div><h3>Daftar Transaksi</h3><p class="note">Kelola seluruh catatan pemasukan, pengeluaran, dan transfer</p></div><div class="row-actions"><button class="btn" data-goto="import">⇧ Impor Excel</button><button class="btn primary" id="addTransaction">＋ Catat Transaksi</button></div></div><div class="filter-line"><div class="row-actions"><div class="field"><label>Jenis Transaksi</label><select id="filterType"><option value="all">Semua jenis</option><option value="income">Pemasukan</option><option value="expense">Pengeluaran</option><option value="transfer">Transfer</option><option value="loan_out">Pinjaman diberikan</option><option value="loan_in">Pengembalian pinjaman</option></select></div><div class="field"><label>Periode</label><input type="month" id="filterMonth"></div></div><div class="row-actions"><button class="btn" id="resetFilter">Reset Filter</button></div></div><div class="table-wrap"><table><thead><tr><th>ID Transaksi</th><th>Tanggal</th><th>Nama / Pihak</th><th>Keterangan</th><th>Jenis</th><th>Akun</th><th>Nominal</th><th>Aksi</th></tr></thead><tbody id="allTransactions"></tbody></table></div></div></section>
+<section class="page" id="page-transactions"><div class="panel"><div class="panel-title"><div><h3>Daftar Transaksi</h3><p class="note">Diurutkan berdasarkan transaksi terbaru</p></div><div class="row-actions"><button class="btn" data-goto="import">⇧ Impor Excel</button><button class="btn primary" id="addTransaction">＋ Catat Transaksi</button></div></div><div class="filter-line"><div class="row-actions"><div class="field"><label>Jenis Transaksi</label><select id="filterType"><option value="all">Semua jenis</option><option value="income">Pemasukan</option><option value="expense">Pengeluaran</option><option value="transfer">Transfer</option><option value="loan_out">Pinjaman diberikan</option><option value="loan_in">Pengembalian pinjaman</option></select></div><div class="field"><label>Periode</label><input type="month" id="filterMonth"></div></div><div class="row-actions"><button class="btn" id="resetFilter">Reset Filter</button></div></div><div class="table-wrap"><table><thead><tr><th>ID Transaksi</th><th>Tanggal</th><th>Nama / Pihak</th><th>Keterangan</th><th>Jenis</th><th>Akun</th><th>Nominal</th><th>Aksi</th></tr></thead><tbody id="allTransactions"></tbody></table></div></div></section>
 <section class="page" id="page-loans"><div class="loans-summary"><div class="panel"><span class="note">Total Pinjaman Diberikan</span><strong id="loansIssued">Rp0</strong><span class="mini-text">Seluruh riwayat pencairan pinjaman</span></div><div class="panel"><span class="note">Total Pengembalian</span><strong id="loansReturned">Rp0</strong><span class="mini-text">Seluruh riwayat angsuran/pelunasan</span></div><div class="panel"><span class="note">Sisa Piutang Pinjaman</span><strong id="loansRemaining">Rp0</strong><span class="mini-text">Belum dikembalikan</span></div></div><div class="panel"><div class="panel-title"><div><h3>Daftar Pinjaman</h3><p class="note">Kelola pinjaman aktif: tambah pinjaman baru atau catat pengembalian</p></div><button class="btn primary" id="newLoan">＋ Pinjaman Baru</button></div><div class="table-wrap"><table><thead><tr><th>ID Transaksi</th><th>Nama Peminjam</th><th>Uraian</th><th>Tanggal</th><th>Jumlah Pinjaman</th><th>Sudah Kembali</th><th>Sisa</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="loansTable"></tbody></table></div></div></section>
 <section class="page" id="page-cash"><div class="cash-layout"><div class="panel"><div class="panel-title"><div><h3>Rincian Pecahan Uang Tunai</h3><p class="note">Masukkan jumlah lembar/keping uang yang tersedia</p></div></div><div class="denoms" id="denoms"></div><p class="mini-text" style="margin-top:12px">Pecahan Rp1.000 kertas dan Rp1.000 koin dicatat terpisah.</p><div class="row-actions" style="margin-top:20px"><button class="btn primary" id="saveCashCount">✓ Simpan Hasil Hitung</button><button class="btn" id="resetCashCount">Reset Isian</button></div></div><div><div class="cash-total"><small>Total Uang Fisik</small><strong id="physicalTotal">Rp0</strong><small>Hasil hitung seluruh pecahan</small><div class="variance" id="varianceText">Selisih terhadap saldo cash: Rp0</div></div><div class="panel"><h3 style="margin-bottom:15px">Rekonsiliasi Cash</h3><p class="help">Saldo cash menurut transaksi: <b id="ledgerCash">Rp0</b></p><p class="help">Waktu terakhir disimpan: <b id="countTime">Belum pernah</b></p></div></div></div></section>
 <section class="page" id="page-reports"><div class="panel"><div class="panel-title"><div><h3>Laporan & Rekap Keuangan</h3><p class="note">Pilih rentang tanggal untuk melihat laporan</p></div></div><div class="row-actions" style="margin-bottom:22px"><div class="field"><label>Dari tanggal</label><input id="reportFrom" type="date"></div><div class="field"><label>Sampai tanggal</label><input id="reportTo" type="date"></div><button class="btn primary" id="applyReport" style="align-self:end">Tampilkan</button></div><div class="loans-summary"><div class="panel" style="background:#f7faff"><span class="note">Pemasukan Periode</span><strong id="reportIncome">Rp0</strong></div><div class="panel" style="background:#f7faff"><span class="note">Pengeluaran Periode</span><strong id="reportExpense">Rp0</strong></div><div class="panel" style="background:#f7faff"><span class="note">Selisih Operasional</span><strong id="reportNet">Rp0</strong></div></div><div class="table-wrap"><table><thead><tr><th>Tanggal</th><th>Nama / Pihak</th><th>Keterangan</th><th>Jenis</th><th>Akun</th><th>Nominal</th></tr></thead><tbody id="reportTable"></tbody></table></div></div></section>
 <section class="page" id="page-settings"><div class="panel"><div class="settings-section"><h3>Identitas & Saldo Awal</h3><div class="fields"><div class="field wide"><label>Nama Kantor / Unit Kerja</label><input id="officeName" maxlength="100"></div><div class="field"><label>Saldo Awal Bank (Rp)</label><input id="openingBank" class="currency-input" placeholder="Rp0"></div><div class="field"><label>Saldo Awal Cash (Rp)</label><input id="openingCash" class="currency-input" placeholder="Rp0"></div></div><div style="margin-top:18px"><button class="btn primary" id="saveSettings">Simpan Pengaturan</button></div></div><hr style="border:0;border-top:1px solid var(--border);margin:25px 0"><div class="settings-section"><h3>Pengelolaan Data</h3><button class="btn danger" id="deleteAll">Hapus Seluruh Data</button></div></div></section>
 <div class="footer">KasKantor • Balmon SFR Kelas II Palangka Raya • Firebase Realtime Active</div></main></div>
 
-<datalist id="namesList"></datalist>
+<!-- Modal Tambah / Edit Transaksi -->
+<div class="modal-backdrop" id="transactionModal"><div class="modal" role="dialog" aria-modal="true"><div class="modal-head"><h2 id="transactionModalTitle">Tambah Transaksi</h2><button class="close" data-close="transactionModal">×</button></div><form id="transactionForm"><div class="fields"><div class="field"><label>Jenis Transaksi</label><select id="txType" required><option value="income">Pemasukan</option><option value="expense">Pengeluaran</option><option value="transfer">Transfer Antar Akun</option><option value="loan_out">Peminjaman</option><option value="loan_in">Pengembalian Pinjaman</option></select></div><div class="field"><label>Tanggal</label><input id="txDate" type="date" required></div>
+<div class="field wide" id="txPersonField">
+  <label id="txPersonLabel">Nama / Pihak Terkait</label>
+  <div class="input-group">
+    <select id="txPerson">
+      <option value="">— Pilih Nama / Pihak —</option>
+    </select>
+    <button type="button" class="btn subtle add-name-trigger" data-target="txPerson" title="Tambah nama baru ke daftar">＋ Tambah Nama</button>
+  </div>
+</div>
+<div class="field wide" id="txLoanReferenceField" hidden><label for="txLoanReference">Pilih ID Transaksi Peminjaman <span class="required">*</span></label><select id="txLoanReference"><option value="">— Pilih Pinjaman yang Akan Dibayar —</option></select></div><div class="field wide"><label>Keterangan</label><input id="txDescription" maxlength="180" placeholder="Contoh: Pembelian ATK / Pembayaran SPPD" required></div><div class="field"><label>Jumlah (Rp)</label><input id="txAmount" class="currency-input" required placeholder="Rp0"></div><div class="field"><label id="txAccountLabel">Sumber / Akun</label><select id="txAccount"><option value="bank">Bank</option><option value="cash">Cash</option></select></div><div class="field wide" id="targetAccountField" hidden><label>Ke Akun Tujuan</label><select id="txTarget"><option value="cash">Cash</option><option value="bank">Bank</option></select></div></div><div class="modal-foot"><button class="btn" type="button" data-close="transactionModal">Batal</button><button class="btn primary" type="submit">Simpan Transaksi</button></div></form></div></div>
 
-<div class="modal-backdrop" id="transactionModal"><div class="modal" role="dialog" aria-modal="true"><div class="modal-head"><h2 id="transactionModalTitle">Tambah Transaksi</h2><button class="close" data-close="transactionModal">×</button></div><form id="transactionForm"><div class="fields"><div class="field"><label>Jenis Transaksi</label><select id="txType" required><option value="income">Pemasukan</option><option value="expense">Pengeluaran</option><option value="transfer">Transfer Antar Akun</option><option value="loan_out">Peminjaman</option><option value="loan_in">Pengembalian Pinjaman</option></select></div><div class="field"><label>Tanggal</label><input id="txDate" type="date" required></div><div class="field wide" id="txPersonField"><label id="txPersonLabel">Nama / Pihak Terkait</label><input id="txPerson" list="namesList" placeholder="Pilih atau ketik nama..." maxlength="120"></div><div class="field wide" id="txLoanReferenceField" hidden><label for="txLoanReference">Pilih ID Transaksi Peminjaman <span class="required">*</span></label><select id="txLoanReference"><option value="">— Pilih Pinjaman yang Akan Dibayar —</option></select></div><div class="field wide"><label>Keterangan</label><input id="txDescription" maxlength="180" placeholder="Contoh: Pembelian ATK / Pembayaran SPPD" required></div><div class="field"><label>Jumlah (Rp)</label><input id="txAmount" class="currency-input" required placeholder="Rp0"></div><div class="field"><label id="txAccountLabel">Sumber / Akun</label><select id="txAccount"><option value="bank">Bank</option><option value="cash">Cash</option></select></div><div class="field wide" id="targetAccountField" hidden><label>Ke Akun Tujuan</label><select id="txTarget"><option value="cash">Cash</option><option value="bank">Bank</option></select></div></div><div class="modal-foot"><button class="btn" type="button" data-close="transactionModal">Batal</button><button class="btn primary" type="submit">Simpan Transaksi</button></div></form></div></div>
+<!-- Modal Pinjaman Baru -->
+<div class="modal-backdrop" id="loanModal"><div class="modal" role="dialog" aria-modal="true"><div class="modal-head"><h2>Pinjaman Baru</h2><button class="close" data-close="loanModal">×</button></div><form id="loanForm"><div class="fields">
+<div class="field wide">
+  <label>Nama Peminjam <span class="required">*</span></label>
+  <div class="input-group">
+    <select id="loanPerson" required>
+      <option value="">— Pilih Nama Peminjam —</option>
+    </select>
+    <button type="button" class="btn subtle add-name-trigger" data-target="loanPerson" title="Tambah nama baru ke daftar">＋ Tambah Nama</button>
+  </div>
+</div>
+<div class="field"><label>Tanggal Peminjaman</label><input id="loanDate" type="date" required></div><div class="field"><label>Jumlah Pinjaman (Rp)</label><input id="loanAmount" class="currency-input" required placeholder="Rp0"></div><div class="field"><label>Sumber Dana</label><select id="loanAccount"><option value="cash">Cash</option><option value="bank">Bank</option></select></div><div class="field wide"><label>Uraian Peminjaman</label><textarea id="loanDescription" rows="2" maxlength="500" required placeholder="Alasan / Uraian peminjaman dana..."></textarea></div></div><div class="modal-foot"><button type="button" class="btn" data-close="loanModal">Batal</button><button type="submit" class="btn primary">Simpan Pinjaman</button></div></form></div></div>
 
-<div class="modal-backdrop" id="loanModal"><div class="modal" role="dialog" aria-modal="true"><div class="modal-head"><h2>Pinjaman Baru</h2><button class="close" data-close="loanModal">×</button></div><form id="loanForm"><div class="fields"><div class="field wide"><label>Nama Peminjam</label><input id="loanPerson" list="namesList" placeholder="Pilih atau ketik nama peminjam..." maxlength="120" required></div><div class="field"><label>Tanggal Peminjaman</label><input id="loanDate" type="date" required></div><div class="field"><label>Jumlah Pinjaman (Rp)</label><input id="loanAmount" class="currency-input" required placeholder="Rp0"></div><div class="field"><label>Sumber Dana</label><select id="loanAccount"><option value="cash">Cash</option><option value="bank">Bank</option></select></div><div class="field wide"><label>Uraian Peminjaman</label><textarea id="loanDescription" rows="2" maxlength="500" required placeholder="Alasan / Uraian peminjaman dana..."></textarea></div></div><div class="modal-foot"><button type="button" class="btn" data-close="loanModal">Batal</button><button type="submit" class="btn primary">Simpan Pinjaman</button></div></form></div></div>
-
+<!-- Modal Pengembalian Pinjaman -->
 <div class="modal-backdrop" id="repayModal"><div class="modal" role="dialog" aria-modal="true"><div class="modal-head"><h2>Catat Pengembalian Pinjaman</h2><button class="close" data-close="repayModal">×</button></div><form id="repayForm"><div class="fields"><div class="field wide"><label for="repayLoanId">ID Transaksi Peminjaman <span class="required">*</span></label><select id="repayLoanId" required><option value="">— Pilih Pinjaman yang Dibayar —</option></select></div><div class="field"><label>Tanggal Pengembalian</label><input id="repayDate" type="date" required></div><div class="field"><label>Jumlah Pengembalian (Rp)</label><input id="repayAmount" class="currency-input" required placeholder="Rp0"></div><div class="field wide"><label>Diterima Ke Akun</label><select id="repayAccount"><option value="cash">Cash</option><option value="bank">Bank</option></select></div><div class="field wide"><label>Uraian Pengembalian</label><input id="repayText" required maxlength="500"></div></div><div class="modal-foot"><button type="button" class="btn" data-close="repayModal">Batal</button><button type="submit" class="btn primary">Simpan Pengembalian</button></div></form></div></div>
+
+<!-- Modal Tambah Nama Baru -->
+<div class="modal-backdrop" id="addNameModal" style="z-index: 65;"><div class="modal" role="dialog" aria-modal="true" style="max-width: 400px;"><div class="modal-head"><h2>Tambah Nama Baru</h2><button class="close" data-close="addNameModal">×</button></div><form id="addNameForm"><div class="fields"><div class="field wide"><label for="newPersonName">Nama Lengkap / Pihak Terkait <span class="required">*</span></label><input id="newPersonName" placeholder="Masukkan nama baru..." maxlength="120" required></div></div><div class="modal-foot"><button type="button" class="btn" data-close="addNameModal">Batal</button><button type="submit" class="btn primary">Simpan & Pilih</button></div></form></div></div>
 
 <div class="toast" id="toast" role="status"></div>
 
@@ -140,10 +165,11 @@
     const el = id => document.getElementById(id);
     const today = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
     const uid = () => globalThis.crypto && crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + '_' + Math.random().toString(36).slice(2);
-    const fresh = () => ({ version: 1, office: 'Keuangan Balmon Palangka Raya', opening: { bank: 0, cash: 0 }, transactions: [], loans: [], importedOpenings: [], cashCount: { counts: {}, savedAt: null } });
+    const fresh = () => ({ version: 1, office: 'Keuangan Balmon Palangka Raya', opening: { bank: 0, cash: 0 }, transactions: [], loans: [], savedNames: [], importedOpenings: [], cashCount: { counts: {}, savedAt: null } });
     
     let state = load();
     let editingTransactionId = null;
+    let activeNameTargetSelectId = null;
 
     function formatCurrencyInput(input) {
         const val = parseCurrency(input.value);
@@ -174,6 +200,7 @@
             opening: s.opening || { bank: 0, cash: 0 }, 
             transactions: Array.isArray(s.transactions) ? s.transactions : [], 
             loans: Array.isArray(s.loans) ? s.loans : [], 
+            savedNames: Array.isArray(s.savedNames) ? s.savedNames : [],
             importedOpenings: Array.isArray(s.importedOpenings) ? s.importedOpenings : [], 
             cashCount: s.cashCount && typeof s.cashCount === 'object' && s.cashCount.counts ? s.cashCount : { counts: {}, savedAt: null } 
         }; 
@@ -196,7 +223,7 @@
     }
 
     function ensureReferences(data) {
-        const entries = [...data.transactions].sort((a, b) => a.date.localeCompare(b.date) || a.id.localeCompare(b.id));
+        const entries = [...data.transactions].sort((a, b) => a.date.localeCompare(b.date) || (a.createdAt || 0) - (b.createdAt || 0));
         const codes = new Set();
         for (const t of entries) {
             if (typeof t.code === 'string' && /^TRX-\d{8}-\d{4,}$/.test(t.code) && !codes.has(t.code)) codes.add(t.code);
@@ -243,7 +270,20 @@
 
     window.addEventListener('firebase-ready', setupFirebaseSync);
 
-    const sorted = () => [...state.transactions].sort((a, b) => b.date.localeCompare(a.date) || String(b.id).localeCompare(String(a.id)));
+    // PENGURUTAN TRANSAKSI TERBARU DI ATAS
+    const sorted = () => {
+        return state.transactions
+            .map((t, idx) => ({ ...t, _idx: idx }))
+            .sort((a, b) => {
+                const dateCmp = String(b.date || '').localeCompare(String(a.date || ''));
+                if (dateCmp !== 0) return dateCmp;
+                const timeA = Number(a.createdAt) || 0;
+                const timeB = Number(b.createdAt) || 0;
+                if (timeB !== timeA) return timeB - timeA;
+                return b._idx - a._idx;
+            });
+    };
+
     const totalType = type => state.transactions.filter(t => t.type === type).reduce((a, t) => a + t.amount, 0);
     
     function balances(txs = state.transactions) { 
@@ -360,18 +400,43 @@
         });
     }
 
-    function populateNamesList() {
-        const names = new Set();
-        state.loans.forEach(l => { if (l.person) names.add(l.person); });
-        state.transactions.forEach(t => { if (t.person) names.add(t.person); });
+    // POPULATE DROPDOWN LIST NAMA
+    function getAllNames() {
+        const namesSet = new Set();
+        (state.savedNames || []).forEach(n => { if (n && n.trim()) namesSet.add(n.trim()); });
+        state.loans.forEach(l => { if (l.person && l.person.trim()) namesSet.add(l.person.trim()); });
+        state.transactions.forEach(t => { if (t.person && t.person.trim()) namesSet.add(t.person.trim()); });
+        return Array.from(namesSet).sort((a, b) => a.localeCompare(b, 'id'));
+    }
+
+    function populateNameDropdowns(preserveTxVal = null, preserveLoanVal = null) {
+        const names = getAllNames();
         
-        const list = el('namesList');
-        list.replaceChildren();
-        names.forEach(name => {
-            const opt = document.createElement('option');
-            opt.value = name;
-            list.append(opt);
-        });
+        const populateSelect = (selectId, placeholder, preservedVal) => {
+            const select = el(selectId);
+            if (!select) return;
+            const currentVal = preservedVal !== null ? preservedVal : select.value;
+            select.replaceChildren();
+            
+            const defOpt = document.createElement('option');
+            defOpt.value = '';
+            defOpt.textContent = placeholder;
+            select.append(defOpt);
+            
+            names.forEach(name => {
+                const opt = document.createElement('option');
+                opt.value = name;
+                opt.textContent = name;
+                select.append(opt);
+            });
+            
+            if (currentVal && names.includes(currentVal)) {
+                select.value = currentVal;
+            }
+        };
+
+        populateSelect('txPerson', '— Pilih Nama / Pihak —', preserveTxVal);
+        populateSelect('loanPerson', '— Pilih Nama Peminjam —', preserveLoanVal);
     }
 
     function populateLoanDropdowns() {
@@ -429,7 +494,10 @@
             return;
         }
 
-        for (const l of state.loans) {
+        // Urutkan pinjaman terbaru di atas
+        const sortedLoans = [...state.loans].sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+
+        for (const l of sortedLoans) {
             const repaid = loanRepaid(l.id), left = l.amount - repaid, r = document.createElement('tr');
             r.append(cell(loanRef(l)), cell(l.person), cell(l.description || ''), cell(l.date), cell(fmt(l.amount)), cell(fmt(repaid)), cell(fmt(left)));
             const status = cell('');
@@ -509,7 +577,7 @@
     }
 
     function render() { 
-        populateNamesList();
+        populateNameDropdowns();
         populateLoanDropdowns();
         renderDashboard(); 
         renderTransactions(); 
@@ -553,8 +621,10 @@
     el('navOverlay').onclick = closeNav;
 
     const openModal = id => {
-        populateNamesList();
-        populateLoanDropdowns();
+        if (id !== 'addNameModal') {
+            populateNameDropdowns();
+            populateLoanDropdowns();
+        }
         el(id).classList.add('show');
     };
     const closeModal = id => el(id).classList.remove('show');
@@ -564,6 +634,41 @@
     document.querySelectorAll('[data-page]').forEach(x => x.onclick = () => goto(x.dataset.page));
     document.querySelectorAll('[data-goto]').forEach(x => x.onclick = () => goto(x.dataset.goto));
 
+    // FITUR TAMBAH NAMA BARU UNTUK DROPDOWN
+    document.querySelectorAll('.add-name-trigger').forEach(btn => {
+        btn.onclick = () => {
+            activeNameTargetSelectId = btn.dataset.target;
+            el('addNameForm').reset();
+            openModal('addNameModal');
+            setTimeout(() => el('newPersonName').focus(), 100);
+        };
+    });
+
+    el('addNameForm').onsubmit = (e) => {
+        e.preventDefault();
+        const newName = el('newPersonName').value.trim();
+        if (!newName) return;
+
+        if (!Array.isArray(state.savedNames)) state.savedNames = [];
+        const existingNames = getAllNames();
+        const matched = existingNames.find(n => n.toLowerCase() === newName.toLowerCase());
+        const finalName = matched || newName;
+
+        if (!matched) {
+            state.savedNames.push(finalName);
+            save();
+        }
+
+        if (activeNameTargetSelectId === 'txPerson') {
+            populateNameDropdowns(finalName, null);
+        } else if (activeNameTargetSelectId === 'loanPerson') {
+            populateNameDropdowns(null, finalName);
+        }
+
+        closeModal('addNameModal');
+        toast(`Nama "${finalName}" berhasil ditambahkan`);
+    };
+
     function updateTxType() {
         const type = el('txType').value;
         el('targetAccountField').hidden = type !== 'transfer';
@@ -572,13 +677,16 @@
         
         if (type === 'loan_out') {
             el('txPersonLabel').innerHTML = 'Nama Peminjam <span class="required">*</span>';
+            el('txPerson').required = true;
         } else {
             el('txPersonLabel').textContent = 'Nama / Pihak Terkait';
+            el('txPerson').required = false;
         }
     }
 
     function addTransaction() {
         editingTransactionId = null;
+        el('transactionModalTitle').textContent = 'Tambah Transaksi';
         el('transactionForm').reset();
         el('txDate').value = today();
         el('txType').value = 'income';
@@ -590,7 +698,10 @@
         const tx = state.transactions.find(t => t.id === id);
         if (!tx) return toast('Transaksi tidak ditemukan');
         editingTransactionId = tx.id;
+        el('transactionModalTitle').textContent = 'Edit Transaksi';
         el('transactionForm').reset();
+        populateNameDropdowns(tx.person || '', null);
+        populateLoanDropdowns();
         el('txType').value = tx.type;
         el('txDate').value = tx.date;
         el('txPerson').value = tx.person || '';
@@ -611,6 +722,7 @@
         const loanId = el('txLoanReference').value;
         const loan = state.loans.find(l => l.id === loanId);
         if (loan) {
+            populateNameDropdowns(loan.person, null);
             el('txPerson').value = loan.person;
             el('txDescription').value = 'Pengembalian pinjaman ' + loan.person;
             const remaining = loan.amount - loanRepaid(loan.id);
@@ -636,7 +748,7 @@
         const loanRefId = el('txLoanReference').value;
 
         if (amount <= 0) return toast('Jumlah nominal harus lebih dari 0');
-        if (type === 'loan_out' && !person) return toast('Nama peminjam wajib diisi');
+        if (type === 'loan_out' && !person) return toast('Nama peminjam wajib dipilih');
         if (type === 'loan_in' && !loanRefId) return toast('Pilih ID Transaksi peminjaman yang dibayar');
 
         const original = editingTransactionId ? state.transactions.find(t => t.id === editingTransactionId) : null;
@@ -645,6 +757,7 @@
             ...(original || {}), 
             id: txId, 
             code: original?.code || nextTxCode(date), 
+            createdAt: original?.createdAt || Date.now(),
             date, 
             description, 
             type, 
@@ -701,11 +814,12 @@
         const person = el('loanPerson').value.trim(), date = el('loanDate').value, amount = parseCurrency(el('loanAmount').value);
         const account = el('loanAccount').value, description = el('loanDescription').value.trim();
         
+        if (!person) return toast('Silakan pilih atau tambahkan nama peminjam');
         if (amount <= 0) return toast('Nominal pinjaman harus lebih dari 0');
 
         const id = uid();
         state.loans.push({ id, person, date, amount, account, description, note: '' });
-        state.transactions.push({ id: uid(), code: nextTxCode(date), loanId: id, date, description, type: 'loan_out', account, amount, person });
+        state.transactions.push({ id: uid(), code: nextTxCode(date), createdAt: Date.now(), loanId: id, date, description, type: 'loan_out', account, amount, person });
         save();
         closeModal('loanModal');
         toast('Pinjaman berhasil disimpan');
@@ -731,7 +845,7 @@
 
         if (amount <= 0) return toast('Nominal pengembalian harus lebih dari 0');
 
-        state.transactions.push({ id: uid(), code: nextTxCode(date), loanId: l.id, date, description, type: 'loan_in', account, amount, person: l.person });
+        state.transactions.push({ id: uid(), code: nextTxCode(date), createdAt: Date.now(), loanId: l.id, date, description, type: 'loan_in', account, amount, person: l.person });
         save();
         closeModal('repayModal');
         toast('Pengembalian berhasil dicatat');
