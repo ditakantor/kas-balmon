@@ -112,7 +112,29 @@
 <div class="section-grid"><div class="panel"><div class="panel-title"><div><h3>Arus Kas Bulanan</h3><p class="note">Pemasukan dan pengeluaran 6 bulan terakhir</p></div><div class="legend"><span><i class="dot" style="background:#2365e8"></i>Pemasukan</span><span><i class="dot" style="background:#08a88a"></i>Pengeluaran</span></div></div><svg class="chart" id="cashChart" viewBox="0 0 720 240" role="img" aria-label="Grafik arus kas bulanan"></svg></div><div class="panel"><div class="panel-title"><div><h3>Komposisi Saldo</h3><p class="note">Perbandingan bank dan cash</p></div></div><div class="donut-wrap"><div class="donut" id="balanceDonut"><div class="donut-label"><b id="donutPct">0%</b> Bank</div></div><div class="split-list"><div><span><i class="dot" style="background:#2365e8"></i>Bank</span><b id="splitBank">Rp0</b></div><div><span><i class="dot" style="background:#12b69c"></i>Cash</span><b id="splitCash">Rp0</b></div></div></div></div></div>
 <div class="panel"><div class="panel-title"><div><h3>Transaksi Terbaru</h3><p class="note">Aktivitas keuangan yang terakhir dicatat</p></div><button class="btn subtle tiny" data-goto="transactions">Lihat semua →</button></div><div class="table-wrap"><table><thead><tr><th>Tanggal</th><th>Nama / Pihak</th><th>Keterangan</th><th>Jenis</th><th>Akun</th><th>Nominal</th></tr></thead><tbody id="recentTable"></tbody></table></div></div></section>
 <section class="page" id="page-transactions"><div class="panel"><div class="panel-title"><div><h3>Daftar Transaksi</h3><p class="note">Diurutkan berdasarkan transaksi terbaru</p></div><div class="row-actions"><button class="btn" data-goto="import">⇧ Impor Excel</button><button class="btn primary" id="addTransaction">＋ Catat Transaksi</button></div></div><div class="filter-line"><div class="row-actions"><div class="field"><label>Jenis Transaksi</label><select id="filterType"><option value="all">Semua jenis</option><option value="income">Pemasukan</option><option value="expense">Pengeluaran</option><option value="transfer">Transfer</option><option value="loan_out">Pinjaman diberikan</option><option value="loan_in">Pengembalian pinjaman</option></select></div><div class="field"><label>Periode</label><input type="month" id="filterMonth"></div></div><div class="row-actions"><button class="btn" id="resetFilter">Reset Filter</button></div></div><div class="table-wrap"><table><thead><tr><th>ID Transaksi</th><th>Tanggal</th><th>Nama / Pihak</th><th>Keterangan</th><th>Jenis</th><th>Akun</th><th>Nominal</th><th>Aksi</th></tr></thead><tbody id="allTransactions"></tbody></table></div></div></section>
-<section class="page" id="page-loans"><div class="loans-summary"><div class="panel"><span class="note">Total Pinjaman Diberikan</span><strong id="loansIssued">Rp0</strong><span class="mini-text">Seluruh riwayat pencairan pinjaman</span></div><div class="panel"><span class="note">Total Pengembalian</span><strong id="loansReturned">Rp0</strong><span class="mini-text">Seluruh riwayat angsuran/pelunasan</span></div><div class="panel"><span class="note">Sisa Piutang Pinjaman</span><strong id="loansRemaining">Rp0</strong><span class="mini-text">Belum dikembalikan</span></div></div><div class="panel"><div class="panel-title"><div><h3>Daftar Pinjaman</h3><p class="note">Kelola pinjaman aktif: tambah pinjaman baru atau catat pengembalian</p></div><button class="btn primary" id="newLoan">＋ Pinjaman Baru</button></div><div class="table-wrap"><table><thead><tr><th>ID Transaksi</th><th>Nama Peminjam</th><th>Uraian</th><th>Tanggal</th><th>Jumlah Pinjaman</th><th>Sudah Kembali</th><th>Sisa</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="loansTable"></tbody></table></div></div></section>
+<section class="page" id="page-loans"><div class="loans-summary"><div class="panel"><span class="note">Total Pinjaman Diberikan</span><strong id="loansIssued">Rp0</strong><span class="mini-text">Seluruh riwayat pencairan pinjaman</span></div><div class="panel"><span class="note">Total Pengembalian</span><strong id="loansReturned">Rp0</strong><span class="mini-text">Seluruh riwayat angsuran/pelunasan</span></div><div class="panel"><span class="note">Sisa Piutang Pinjaman</span><strong id="loansRemaining">Rp0</strong><span class="mini-text">Belum dikembalikan</span></div></div><div class="panel"><div class="panel-title"><div><h3>Daftar Pinjaman</h3><p class="note">Kelola pinjaman aktif atau sortir riwayat pinjaman yang sudah lunas</p></div><button class="btn primary" id="newLoan">＋ Pinjaman Baru</button></div>
+<div class="filter-line">
+  <div class="row-actions">
+    <div class="field">
+      <label for="filterLoanStatus">Sortir Status Pinjaman</label>
+      <select id="filterLoanStatus">
+        <option value="all">Semua Status (Belum Lunas di Atas)</option>
+        <option value="unpaid">Belum Lunas</option>
+        <option value="paid">Sudah Lunas</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="filterLoanPerson">Filter Nama Peminjam</label>
+      <select id="filterLoanPerson">
+        <option value="all">Semua Peminjam</option>
+      </select>
+    </div>
+  </div>
+  <div class="row-actions">
+    <button class="btn" id="resetLoanFilter">Reset Sortir</button>
+  </div>
+</div>
+<div class="table-wrap"><table><thead><tr><th>ID Transaksi</th><th>Nama Peminjam</th><th>Uraian</th><th>Tanggal</th><th>Jumlah Pinjaman</th><th>Sudah Kembali</th><th>Sisa</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="loansTable"></tbody></table></div></div></section>
 <section class="page" id="page-cash"><div class="cash-layout"><div class="panel"><div class="panel-title"><div><h3>Rincian Pecahan Uang Tunai</h3><p class="note">Masukkan jumlah lembar/keping uang yang tersedia</p></div></div><div class="denoms" id="denoms"></div><p class="mini-text" style="margin-top:12px">Pecahan Rp1.000 kertas dan Rp1.000 koin dicatat terpisah.</p><div class="row-actions" style="margin-top:20px"><button class="btn primary" id="saveCashCount">✓ Simpan Hasil Hitung</button><button class="btn" id="resetCashCount">Reset Isian</button></div></div><div><div class="cash-total"><small>Total Uang Fisik</small><strong id="physicalTotal">Rp0</strong><small>Hasil hitung seluruh pecahan</small><div class="variance" id="varianceText">Selisih terhadap saldo cash: Rp0</div></div><div class="panel"><h3 style="margin-bottom:15px">Rekonsiliasi Cash</h3><p class="help">Saldo cash menurut transaksi: <b id="ledgerCash">Rp0</b></p><p class="help">Waktu terakhir disimpan: <b id="countTime">Belum pernah</b></p></div></div></div></section>
 <section class="page" id="page-reports"><div class="panel"><div class="panel-title"><div><h3>Laporan & Rekap Keuangan</h3><p class="note">Pilih rentang tanggal untuk melihat laporan</p></div></div><div class="row-actions" style="margin-bottom:22px"><div class="field"><label>Dari tanggal</label><input id="reportFrom" type="date"></div><div class="field"><label>Sampai tanggal</label><input id="reportTo" type="date"></div><button class="btn primary" id="applyReport" style="align-self:end">Tampilkan</button></div><div class="loans-summary"><div class="panel" style="background:#f7faff"><span class="note">Pemasukan Periode</span><strong id="reportIncome">Rp0</strong></div><div class="panel" style="background:#f7faff"><span class="note">Pengeluaran Periode</span><strong id="reportExpense">Rp0</strong></div><div class="panel" style="background:#f7faff"><span class="note">Selisih Operasional</span><strong id="reportNet">Rp0</strong></div></div><div class="table-wrap"><table><thead><tr><th>Tanggal</th><th>Nama / Pihak</th><th>Keterangan</th><th>Jenis</th><th>Akun</th><th>Nominal</th></tr></thead><tbody id="reportTable"></tbody></table></div></div></section>
 <section class="page" id="page-settings"><div class="panel"><div class="settings-section"><h3>Identitas & Saldo Awal</h3><div class="fields"><div class="field wide"><label>Nama Kantor / Unit Kerja</label><input id="officeName" maxlength="100"></div><div class="field"><label>Saldo Awal Bank (Rp)</label><input id="openingBank" class="currency-input" placeholder="Rp0"></div><div class="field"><label>Saldo Awal Cash (Rp)</label><input id="openingCash" class="currency-input" placeholder="Rp0"></div></div><div style="margin-top:18px"><button class="btn primary" id="saveSettings">Simpan Pengaturan</button></div></div><hr style="border:0;border-top:1px solid var(--border);margin:25px 0"><div class="settings-section"><h3>Pengelolaan Data</h3><button class="btn danger" id="deleteAll">Hapus Seluruh Data</button></div></div></section>
@@ -270,7 +292,6 @@
 
     window.addEventListener('firebase-ready', setupFirebaseSync);
 
-    // PENGURUTAN TRANSAKSI TERBARU DI ATAS
     const sorted = () => {
         return state.transactions
             .map((t, idx) => ({ ...t, _idx: idx }))
@@ -400,7 +421,6 @@
         });
     }
 
-    // POPULATE DROPDOWN LIST NAMA
     function getAllNames() {
         const namesSet = new Set();
         (state.savedNames || []).forEach(n => { if (n && n.trim()) namesSet.add(n.trim()); });
@@ -437,6 +457,22 @@
 
         populateSelect('txPerson', '— Pilih Nama / Pihak —', preserveTxVal);
         populateSelect('loanPerson', '— Pilih Nama Peminjam —', preserveLoanVal);
+
+        // Populate filter peminjam di menu Pinjaman
+        const filterLoanSelect = el('filterLoanPerson');
+        if (filterLoanSelect) {
+            const prevVal = filterLoanSelect.value;
+            filterLoanSelect.replaceChildren();
+            const defAll = document.createElement('option'); defAll.value = 'all'; defAll.textContent = 'Semua Peminjam';
+            filterLoanSelect.append(defAll);
+            
+            const borrowerNames = Array.from(new Set(state.loans.map(l => (l.person || '').trim()).filter(Boolean))).sort((a, b) => a.localeCompare(b, 'id'));
+            borrowerNames.forEach(name => {
+                const opt = document.createElement('option'); opt.value = name; opt.textContent = name;
+                filterLoanSelect.append(opt);
+            });
+            if (prevVal === 'all' || borrowerNames.includes(prevVal)) filterLoanSelect.value = prevVal;
+        }
     }
 
     function populateLoanDropdowns() {
@@ -488,29 +524,55 @@
         el('loansReturned').textContent = fmt(totalType('loan_in'));
         el('loansRemaining').textContent = fmt(loanOutstanding());
         
-        if (!state.loans.length) {
-            const r = document.createElement('tr'), td = cell('Belum ada pinjaman');
+        const statusFilter = el('filterLoanStatus')?.value || 'all';
+        const personFilter = el('filterLoanPerson')?.value || 'all';
+
+        let filteredLoans = state.loans.map(l => {
+            const repaid = loanRepaid(l.id);
+            const left = l.amount - repaid;
+            return { ...l, repaid, left, isPaid: left <= 0 };
+        });
+
+        // Terapkan filter status pelunasan
+        if (statusFilter === 'unpaid') {
+            filteredLoans = filteredLoans.filter(l => !l.isPaid);
+        } else if (statusFilter === 'paid') {
+            filteredLoans = filteredLoans.filter(l => l.isPaid);
+        }
+
+        // Terapkan filter nama peminjam
+        if (personFilter !== 'all') {
+            filteredLoans = filteredLoans.filter(l => (l.person || '').trim() === personFilter);
+        }
+
+        // Sortir: jika mode 'all', tampilkan Belum Lunas di atas, lalu urutkan berdasarkan tanggal terbaru
+        filteredLoans.sort((a, b) => {
+            if (statusFilter === 'all' && a.isPaid !== b.isPaid) {
+                return a.isPaid ? 1 : -1;
+            }
+            return String(b.date || '').localeCompare(String(a.date || ''));
+        });
+
+        if (!filteredLoans.length) {
+            const r = document.createElement('tr'), td = cell('Tidak ada data pinjaman yang sesuai filter');
             td.colSpan = 9; td.className = 'empty'; r.append(td); body.append(r);
             return;
         }
 
-        // Urutkan pinjaman terbaru di atas
-        const sortedLoans = [...state.loans].sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
-
-        for (const l of sortedLoans) {
-            const repaid = loanRepaid(l.id), left = l.amount - repaid, r = document.createElement('tr');
-            r.append(cell(loanRef(l)), cell(l.person), cell(l.description || ''), cell(l.date), cell(fmt(l.amount)), cell(fmt(repaid)), cell(fmt(left)));
+        for (const l of filteredLoans) {
+            const r = document.createElement('tr');
+            r.append(cell(loanRef(l)), cell(l.person), cell(l.description || ''), cell(l.date), cell(fmt(l.amount)), cell(fmt(l.repaid)), cell(fmt(l.left)));
             const status = cell('');
             const p = document.createElement('span');
-            p.className = 'pill ' + (left <= 0 ? 'income' : 'loan');
-            p.textContent = left <= 0 ? 'Lunas' : 'Belum Lunas';
+            p.className = 'pill ' + (l.isPaid ? 'income' : 'loan');
+            p.textContent = l.isPaid ? 'Sudah Lunas' : 'Belum Lunas';
             status.append(p);
             r.append(status);
 
             const act = cell('');
             const buttons = document.createElement('div');
             buttons.className = 'action-buttons';
-            if (left > 0) {
+            if (!l.isPaid) {
                 const bt = document.createElement('button');
                 bt.className = 'btn tiny primary';
                 bt.textContent = 'Bayar';
@@ -634,7 +696,6 @@
     document.querySelectorAll('[data-page]').forEach(x => x.onclick = () => goto(x.dataset.page));
     document.querySelectorAll('[data-goto]').forEach(x => x.onclick = () => goto(x.dataset.goto));
 
-    // FITUR TAMBAH NAMA BARU UNTUK DROPDOWN
     document.querySelectorAll('.add-name-trigger').forEach(btn => {
         btn.onclick = () => {
             activeNameTargetSelectId = btn.dataset.target;
@@ -878,6 +939,11 @@
     el('filterType').onchange = renderTransactions;
     el('filterMonth').onchange = renderTransactions;
     el('resetFilter').onclick = () => { el('filterType').value = 'all'; el('filterMonth').value = ''; renderTransactions(); };
+
+    // Event Listener Filter Sortir Pinjaman
+    el('filterLoanStatus').onchange = renderLoans;
+    el('filterLoanPerson').onchange = renderLoans;
+    el('resetLoanFilter').onclick = () => { el('filterLoanStatus').value = 'all'; el('filterLoanPerson').value = 'all'; renderLoans(); };
 
     buildDenoms();
     initCurrencyInputs();
